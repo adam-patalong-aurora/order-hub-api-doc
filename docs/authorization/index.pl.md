@@ -1,6 +1,6 @@
-# Homepage
+# Autoryzacja
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Pełna dokumentacja dostępna jest na stronie [mkdocs.org](https://www.mkdocs.org).
 
 ## Code Annotation Examples
 

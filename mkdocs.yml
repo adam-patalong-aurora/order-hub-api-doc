@@ -1,5 +1,8 @@
-site_name: Order Hub Api Documentation
+site_name: Order Hub - Documentation
 site_url: https://adam-patalong-aurora.github.io/order-hub-api-doc/
+
+docs_dir: docs/
+
 theme:
   name: material
   features:
@@ -26,6 +29,35 @@ theme:
         name: Switch to light mode
       primary: teal
       accent: lime
+
+nav:
+  - Home: index.md
+  - Authorization:
+      - authorization/index.md
+
+plugins:
+  - search:
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+          site_name: "Order Hub - Api Documentation"
+        - locale: pl
+          name: Polish
+          build: true
+          site_name: "Order Hub - Dokumentacja (pl)"
+          theme:
+            palette:
+              primary: red
+          nav_translations:
+            Home: Strona Główna
+            Authorization: Autoryzacja
 
 markdown_extensions:
   - pymdownx.highlight:
