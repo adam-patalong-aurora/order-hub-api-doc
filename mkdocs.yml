@@ -1,5 +1,5 @@
 site_name: Order Hub Api Documentation
-site_url: https://github.com/adam-patalong-aurora/order-hub-api-doc/
+site_url: https://adam-patalong-aurora.github.io/order-hub-api-doc/
 theme:
   name: material
   features:
