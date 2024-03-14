@@ -15,7 +15,7 @@ theme:
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
-  language: en
+  language: pl
   palette:
     - scheme: default
       toggle:
@@ -31,9 +31,22 @@ theme:
       accent: lime
 
 nav:
-  - Home: index.md
+  - Home Page: index.md
   - Authorization:
       - authorization/index.md
+      - authorization/account_creating.md
+      - authorization/login.md
+      - authorization/api.md
+  - Sales Channels:
+      - sales-channels/index.md
+  - Orders:
+      - orders/index.md
+  - Configurator:
+        - configurator/index.md
+  - Configuration:
+        - configuration/index.md
+  - Pricing:
+        - pricing/index.md
 
 plugins:
   - search:
@@ -44,20 +57,25 @@ plugins:
       reconfigure_search: true
       languages:
         - locale: en
-          default: true
           name: English
           build: true
           site_name: "Order Hub - Api Documentation"
         - locale: pl
+          default: true
           name: Polish
           build: true
-          site_name: "Order Hub - Dokumentacja (pl)"
+          site_name: "Order Hub - Dokumentacja API"
           theme:
             palette:
               primary: red
           nav_translations:
-            Home: Strona Główna
+            Home Page: Strona Główna
             Authorization: Autoryzacja
+            Sales Channels: Kanały Sprzedaży
+            Orders: Zamówienia
+            Configurator: Konfigurator
+            Configuration: Konfiguracja
+            Pricing: Cennik
 
 markdown_extensions:
   - pymdownx.highlight:

@@ -1,10 +1,3 @@
-# Homepage
+# Introduction
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## dsfdsfs
-
-sdfsdf
-
-## sdfsdf
-sdsfsdds
+This is the documentation for the Order Hub. The Order Hub is a RESTful API service that allows you to manage orders coming from multiple sales channels.
