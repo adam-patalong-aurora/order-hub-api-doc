@@ -1,5 +1,5 @@
 # Api
-Moduł autoryzacjiudostępnia następujące endpointy:
+Moduł autoryzacji udostępnia następujące endpointy:
 
 ### Tworzenie nowego konta - api/v1/admin [POST]
 Aby utworzyć nowe konto należy wykonać zapytanie metodą `POST` na endpoint `api/v1/admin` z danymi nowego użytkownika w ciele zapytania. Dane nowego użytkownika muszą zawierać:
