@@ -1,2 +1,2 @@
 # Wprowadzenie
-W trakcie...
+Składanie zamówień odbywa się na podstawie otrzymanego konfiguratora, którego należy zaimplementować w swoim sklepie. Następnie odpowiednią konfigurację zamówienia wysyłasz pod właściwe API, a OrderHub je przetworzy. W nagłówku zapytania każdorazowo musisz umieścić swoje [dane autoryzacyjne](../../authorization). W tej zakładce znajszesz szczegółowe informacje o tym jak wysyłać konfiguracje zamówień do OrderHub oraz jak je edytować.

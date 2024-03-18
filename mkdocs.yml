@@ -34,19 +34,9 @@ nav:
   - Home Page: index.md
   - Authorization:
       - authorization/index.md
-      - authorization/account_creating.md
-      - authorization/login.md
-      - authorization/api.md
-  - Sales Channels:
-      - sales-channels/index.md
-  - Orders:
+  - Setting Orders:
       - orders/index.md
-  - Configurator:
-        - configurator/index.md
-  - Configuration:
-        - configuration/index.md
-  - Pricing:
-        - pricing/index.md
+      - orders/create.md
 
 plugins:
   - search:
@@ -71,11 +61,7 @@ plugins:
           nav_translations:
             Home Page: Strona Główna
             Authorization: Autoryzacja
-            Sales Channels: Kanały Sprzedaży
-            Orders: Zamówienia
-            Configurator: Konfigurator
-            Configuration: Konfiguracja
-            Pricing: Cennik
+            Setting Orders: Składanie zamówień
 
 markdown_extensions:
   - pymdownx.highlight:
