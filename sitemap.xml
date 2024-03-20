@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://adam-patalong-aurora.github.io/order-hub-api-doc/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/en/"/>
+    </url>
+    <url>
+        <loc>https://adam-patalong-aurora.github.io/order-hub-api-doc/source/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/source/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/en/source/"/>
+    </url>
+    <url>
+        <loc>https://adam-patalong-aurora.github.io/order-hub-api-doc/authorization/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/authorization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/en/authorization/"/>
+    </url>
+    <url>
+        <loc>https://adam-patalong-aurora.github.io/order-hub-api-doc/orders/create/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/orders/create/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/en/orders/create/"/>
+    </url>
+    <url>
+        <loc>https://adam-patalong-aurora.github.io/order-hub-api-doc/orders/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/orders/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/en/orders/"/>
+    </url>
+    <url>
+        <loc>https://adam-patalong-aurora.github.io/order-hub-api-doc/en/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/en/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/"/>
+    </url>
+    <url>
+        <loc>https://adam-patalong-aurora.github.io/order-hub-api-doc/en/source/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/en/source/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/source/"/>
+    </url>
+    <url>
+        <loc>https://adam-patalong-aurora.github.io/order-hub-api-doc/en/authorization/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/en/authorization/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/authorization/"/>
+    </url>
+    <url>
+        <loc>https://adam-patalong-aurora.github.io/order-hub-api-doc/en/orders/create/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/en/orders/create/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/orders/create/"/>
+    </url>
+    <url>
+        <loc>https://adam-patalong-aurora.github.io/order-hub-api-doc/en/orders/</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/en/orders/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://adam-patalong-aurora.github.io/order-hub-api-doc/orders/"/>
+    </url>
+</urlset>
