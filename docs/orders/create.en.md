@@ -1,8 +1,8 @@
-# Tworzenie zamówienia
-## Zamówienie
-Stwórz ciało zamówienia w formacie JSON stosując właściwe dla twojego sklepu atrybuty i wartości.
+# Create an order
+## Order
+Create an order body in JSON format using attributes and values appropriate for your store.
 
-Poniżej znajdziesz przykład jak powinno wyglądać zamówienie:
+Below you will find an example of what an order should look like:
 
 === "JSON"
 ```json
@@ -11,8 +11,8 @@ Poniżej znajdziesz przykład jak powinno wyglądać zamówienie:
   "salesChannelId": "{your-sales-channel-id}",
   "configurations": 
       [
-          { konfiguracja 1 },
-          { konfiguracja 2 }
+          { configuration 1 },
+          { configuration 2 }
       ],
   "price": 544.45,
   "address": {
@@ -25,11 +25,11 @@ Poniżej znajdziesz przykład jak powinno wyglądać zamówienie:
 }
 ```
 
-## Konfiguracja
+## Configuration
 
-Na podstawie konfiguratora stwórz konfigurację zamówienia. Zamówienie może zawierać kilka konfiguracji.Prawidłowo stworzona konfiguracja składa się z ciała konfiguracji oraz posiada opcje, na podstawie których zostanie obliczona wartość zamówienia.
+Create an order configuration based on the configurator. An order may contain several configurations. A properly created configuration consists of a configuration body and has options on the basis of which the order value will be calculated.
 
-Przykład ciała konfiguracji:
+Configuration body example:
 
 === "JSON"
 ```json
@@ -50,13 +50,13 @@ Przykład ciała konfiguracji:
     }
 ```
 
-Całość zamówienia może mieć obszerny romiar. Zależny jest on od ilości konfiguracji jakie posiada zamówienie oraz opcji w nich zawartych.
+The entire order may be large in size. It depends on the number of configurations the order has and the options included in them.
 
-## Wysyłanie zamówienia
+## Sending the order
 
-Przygotowane według powyższych informacji zamówienie wyślij jako ciało zapytania metodą `POST` pod API `/api/v1/sales-channels-orders`. W nagłówku zapytania umieść [dane autoryzacyjne](../../authorization).
+Send the order prepared according to the above information as a query body using the `POST` method under the API `/api/v1/sales-channels-orders`. Place [authorization data](../../authorization) in the query header.
 
-Przykład ciała kompletnego zamówienia zawierającego jedną konfigurację:
+Example of a complete order body containing one configuration:
 
 === "JSON"
 ```json
@@ -120,7 +120,7 @@ Przykład ciała kompletnego zamówienia zawierającego jedną konfigurację:
 }
 ```
 
-Przykład odpowiedzi:
+Response sample:
 
 === "JSON"
 ``` json

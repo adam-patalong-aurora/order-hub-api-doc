@@ -76,9 +76,9 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.mark
   - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
 
 copyright: Copyright © 2024 Aurora Creation Sp. z o.o. (https://auroracreation.com)
 
