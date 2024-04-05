@@ -34,9 +34,10 @@ nav:
   - Home Page: index.md
   - Authorization:
       - authorization/index.md
-  - Setting Orders:
+  - Orders:
       - orders/index.md
       - orders/create.md
+      - orders/update.md
 
 plugins:
   - search:
@@ -61,7 +62,7 @@ plugins:
           nav_translations:
             Home Page: Strona Główna
             Authorization: Autoryzacja
-            Setting Orders: Składanie zamówień
+            Orders: Zamówienia
 
 markdown_extensions:
   - pymdownx.highlight:

@@ -1,14 +1,12 @@
-# Nowe zamówienie
-## Tworzenie zamówienia
-Stwórz ciało zamówienia w formacie JSON stosując właściwe dla twojego sklepu atrybuty i wartości.
+# Edycja zamówienia
+## Aktualizacja zamówienia
+Stwórz ciało zamówienia w formacie JSON stosując zaktualizowane wartości atrybutów.
 
 Poniżej znajdziesz przykład jak powinno wyglądać zamówienie:
 
 === "JSON"
 ```json
 {
-  "externalOrderId": "1-01/2020",
-  "salesChannelId": "{your-sales-channel-id}",
   "configurations": 
       [
           { konfiguracja 1 },
@@ -21,13 +19,18 @@ Poniżej znajdziesz przykład jak powinno wyglądać zamówienie:
     "zipCode": "00-001",
     "country": "PL"
   },
+  "state": "draft",
   "deliveryDate": "2020-12-24"       
 }
 ```
 
-## Tworzenie konfiguracji
+## Aktualizacja konfiguracji
 
-Na podstawie konfiguratora stwórz konfigurację zamówienia. Zamówienie może zawierać kilka konfiguracji.Prawidłowo stworzona konfiguracja składa się z ciała konfiguracji, w którym zawarte są opcje, i na podstawie których zostanie obliczona wartość zamówienia.
+Na podstawie konfiguratora stwórz zaktualizowaną konfigurację zamówienia. Aktualizacja konfiguracji opiera się na jej atrybucie `externalConfigurationId`, który jest wymagany. Pozostałe atrybuty są opcjonalne, ale jeżeli występują muszą być zgodne z konfiguratorem. 
+ 
+???+ warning "UWAGA"
+
+    Jeżeli zmiana dotyczy opcji, to należy podać wszystkie opcje tej konfiguracji.
 
 Przykład ciała konfiguracji:
 
@@ -51,24 +54,21 @@ Przykład ciała konfiguracji:
     }
 ```
 
-Całość zamówienia może mieć obszerny romiar. Zależny jest on od ilości konfiguracji jakie posiada zamówienie oraz opcji w nich zawartych.
+## Wysyłanie aktualizacji zamówienia
 
-## Wysyłanie zamówienia
+Przygotowane według powyższych wytycznych zamówienie wyślij jako ciało zapytania metodą `PATCH` pod API `/sales-channel-api/v1/orders/{id}`, gdzie `{id}` to id Twojego zamówienia, które chcesz aktualizować. W nagłówku zapytania umieść swoje [dane autoryzacyjne](../../authorization).
 
-Przygotowane według powyższych wytycznych zamówienie wyślij jako ciało zapytania metodą `POST` pod API `/sales-channel-api/v1/orders`. W nagłówku zapytania umieść [dane autoryzacyjne](../../authorization).
-
-Przykład ciała kompletnego zamówienia zawierającego jedną konfigurację:
+Przykład ciała kompletnego zamówienia zawierającego jedną konfigurację, w której zmieniono nazwę konfiguracji, cenę oraz wartość jednej z opcji w step4:
 
 === "JSON"
 ```json
 {
-  "externalOrderId": "1-01/2020",
-  "salesChannelId": "{your-sales-channel-id}",
   "configurations": 
       [
         {
+          "externalConfigurationId": "{yourUniqueConfigurationId}",
           "configuratorId": "{configuratorId}",
-          "configurationName": "Konfiguracja 1",
+          "configurationName": "Konfiguracja 1 - update 1",
           "options":
           [
             {
@@ -104,20 +104,13 @@ Przykład ciała kompletnego zamówienia zawierającego jedną konfigurację:
               "stepId": "Step4",
               "elementId": "{uniqueElementId}",
               "componentId": "{uniqueComponentId}",
-              "value": "Z okazji urodzin"
+              "value": "Z okazji imienin"
             }
           ],
-          "price": 544.45
+          "price": 128.00
         }
       ],
-  "price": 544.45,
-  "address": {
-    "street": "Testowa 1",
-    "city": "Warszawa",
-    "zipCode": "00-001",
-    "country": "PL"
-  },
-  "deliveryDate": "2020-12-24"       
+  "price": 128.00
 }
 ```
 
