@@ -2,6 +2,9 @@
 ## Aktualizacja zamówienia
 Stwórz ciało zamówienia w formacie JSON stosując zaktualizowane wartości atrybutów.
 
+???+ info "Informacja"
+    Możesz podać tylko te atrybuty, które chcesz zaktualizować.
+
 Poniżej znajdziesz przykład jak powinno wyglądać zamówienie:
 
 === "JSON"
@@ -28,7 +31,7 @@ Poniżej znajdziesz przykład jak powinno wyglądać zamówienie:
 
 Na podstawie konfiguratora stwórz zaktualizowaną konfigurację zamówienia. Aktualizacja konfiguracji opiera się na jej atrybucie `externalConfigurationId`, który jest wymagany. Pozostałe atrybuty są opcjonalne, ale jeżeli występują muszą być zgodne z konfiguratorem. 
  
-???+ warning "UWAGA"
+???+ warning "Uwaga"
 
     Jeżeli zmiana dotyczy opcji, to należy podać wszystkie opcje tej konfiguracji.
 
