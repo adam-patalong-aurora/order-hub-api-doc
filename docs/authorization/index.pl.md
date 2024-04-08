@@ -4,4 +4,5 @@ Aby wykonywać jakiekolwiek zapytania do API OrderHub, musisz posiadać odpowied
 - `OH-Api-Key` - zawierającego unikatowy klucz autoryzacyjny przypisany do Twojego kanału sprzedaży.
 - `OH-Sales-Channel-Id` - zawierającego identyfikator Twojego kanału sprzedaży. 
 
-Klucz autoryzacyjny oraz identyfikator kanału sprzedaży otrzymasz od nas po podpisaniu umowy o współpracy.
+???+ question "Jak zdobyć klucze?"
+    Klucz autoryzacyjny oraz iden tyfikator kanału sprzedaży otrzymasz od nas po podpisaniu umowy o współpracy.

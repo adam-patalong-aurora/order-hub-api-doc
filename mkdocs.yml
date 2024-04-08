@@ -53,7 +53,7 @@ plugins:
           site_name: "Order Hub - Api Documentation"
         - locale: pl
           default: true
-          name: Polish
+          name: Polski
           build: true
           site_name: "Order Hub - Dokumentacja API"
           theme:
