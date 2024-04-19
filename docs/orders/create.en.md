@@ -32,6 +32,7 @@ Create an order configuration based on the configurator. An order may contain se
     === "JSON"
     ```json
         {
+          "externalConfigurationId": "{yourUniqueConfigurationId}",
           "configuratorId": "{configuratorId}",
           "configurationName": "Konfiguracja 1",
           "options":
@@ -64,6 +65,7 @@ Send the order prepared according to the above information as a query body using
       "configurations": 
           [
             {
+              "externalConfigurationId": "{yourUniqueConfigurationId}",
               "configuratorId": "{configuratorId}",
               "configurationName": "Konfiguracja 1",
               "options":

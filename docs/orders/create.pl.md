@@ -64,6 +64,7 @@ Przygotowane według powyższych wytycznych zamówienie wyślij jako ciało zapy
       "configurations": 
           [
             {
+              "externalConfigurationId": "{yourUniqueConfigurationId}",
               "configuratorId": "{configuratorId}",
               "configurationName": "Konfiguracja 1",
               "options":
