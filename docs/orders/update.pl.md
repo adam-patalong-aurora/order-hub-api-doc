@@ -22,6 +22,7 @@ Stwórz ciało zamówienia w formacie JSON stosując zaktualizowane wartości at
         "country": "PL"
       },
       "state": "draft",
+      "shippingMethod": "{shippingMethod}",
       "deliveryDate": "2020-12-24"       
     }
     ```

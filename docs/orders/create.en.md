@@ -20,6 +20,7 @@ Create an order body in JSON format using attributes and values appropriate for 
         "zipCode": "00-001",
         "country": "PL"
       },
+      "shippingMethod": "{shippingMethod}",
       "deliveryDate": "2020-12-24"       
     }
     ```
@@ -116,6 +117,7 @@ Send the order prepared according to the above information as a query body using
         "zipCode": "00-001",
         "country": "PL"
       },
+      "shippingMethod": "{shippingMethod}",
       "deliveryDate": "2020-12-24"       
     }
     ```

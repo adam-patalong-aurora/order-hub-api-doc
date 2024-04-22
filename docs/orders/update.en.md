@@ -22,6 +22,7 @@ Create the order body in JSON format using the updated attribute values.
         "country": "PL"
       },
       "state": "draft",
+      "shippingMethod": "{shippingMethod}",
       "deliveryDate": "2020-12-24"       
     }
     ```

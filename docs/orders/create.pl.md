@@ -20,6 +20,7 @@ Stwórz ciało zamówienia w formacie JSON stosując właściwe dla twojego skle
         "zipCode": "00-001",
         "country": "PL"
       },
+      "shippingMethod": "{shippingMethod}",
       "deliveryDate": "2020-12-24"       
     }
     ```
@@ -115,6 +116,7 @@ Przygotowane według powyższych wytycznych zamówienie wyślij jako ciało zapy
         "zipCode": "00-001",
         "country": "PL"
       },
+      "shippingMethod": "{shippingMethod}",
       "deliveryDate": "2020-12-24"       
     }
     ```
