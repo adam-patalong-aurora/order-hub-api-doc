@@ -1,35 +1,34 @@
 # Edycja zamówienia
-## Aktualizacja zamówienia
+
+Edycja zamówienia polega na zmianie wartości atrybutów zamówienia lub konfiguracji. W celu edycji zamówienia należy wysłać zapytanie metodą `PATCH` pod API `/sales-channel-api/v1/orders/{id}`, gdzie `{id}` to id zamówienia, które chcesz edytować.
+
+???+ warning "Uwaga"
+    Jeżeli zmiana dotyczy opcji, to należy podać wszystkie opcje tej konfiguracji.
+
+??? "Przykład kompletnego ciała edycji zamówienia zawierającego jedną konfigurację"
+    === "JSON"
+        ```json
+        --8<-- "docs/orders/code/body_update.json"
+        ```
+
+??? "Przykład odpowiedzi"
+    === "JSON"
+        ```json
+        --8<-- "docs/orders/code/response.json"
+        ```
+
+## Krok po kroku
+
+### Aktualizacja zamówienia
 Stwórz ciało zamówienia w formacie JSON stosując zaktualizowane wartości atrybutów.
 
 ???+ info "Informacja"
     Możesz podać tylko te atrybuty, które chcesz zaktualizować.
 
-??? "Przykład jak powinno wyglądać zamówienie"
-    === "JSON"
-    ```json
-    {
-      "configurations": 
-          [
-              { konfiguracja 1 },
-              { konfiguracja 2 }
-          ],
-      "price": 544.45,
-      "address": {
-        "street": "Testowa 1",
-        "city": "Warszawa",
-        "zipCode": "00-001",
-        "country": "PL"
-      },
-      "state": "draft",
-      "shippingMethod": "{shippingMethod}",
-      "deliveryDate": "2020-12-24"       
-    }
-    ```
 
-## Aktualizacja konfiguracji
+### Aktualizacja konfiguracji
 
-Na podstawie konfiguratora stwórz zaktualizowaną konfigurację zamówienia. Aktualizacja konfiguracji opiera się na jej atrybucie `externalConfigurationId`, który jest wymagany. Pozostałe atrybuty są opcjonalne, ale jeżeli występują muszą być zgodne z konfiguratorem. 
+Na podstawie posiadanego konfiguratora stwórz zaktualizowaną konfigurację zamówienia. Aktualizacja konfiguracji opiera się na jej atrybucie `externalConfigurationId`. Aktualizowana konfiguracja musi być kompletna, czyli musi zawierać wszystkie atrybuty konfiguracji.
  
 ???+ warning "Uwaga"
 
@@ -37,90 +36,10 @@ Na podstawie konfiguratora stwórz zaktualizowaną konfigurację zamówienia. Ak
 
 ??? "Przykład ciała konfiguracji"
     === "JSON"
-    ```json
-        {
-          "externalConfigurationId": "{yourUniqueConfigurationId}",
-          "configuratorId": "{configuratorId}",
-          "configurationName": "Konfiguracja 1",
-          "options":
-          [
-            {
-              "name": "{optionName}",
-              "stepId": "Step1",
-              "elementId": "{uniqueElementId}",
-              "componentId": "{uniqueComponentId}",
-              "value": "1"
-            }
-          ],
-          "price": 123.45
-        }
-    ```
+        ```json linenums="1" hl_lines="2"
+        --8<-- "docs/orders/code/configuration.json"
+        ```
 
-## Wysyłanie aktualizacji zamówienia
+### Wysyłanie aktualizacji zamówienia
 
 Przygotowane według powyższych wytycznych zamówienie wyślij jako ciało zapytania metodą `PATCH` pod API `/sales-channel-api/v1/orders/{id}`, gdzie `{id}` to id Twojego zamówienia, które chcesz aktualizować. W nagłówku zapytania umieść swoje [dane autoryzacyjne](../../authorization).
-
-??? "Przykład ciała kompletnego zamówienia zawierającego jedną konfigurację, w której zmieniono nazwę konfiguracji, cenę oraz wartość jednej z opcji"
-    === "JSON"
-    ```json
-    {
-      "configurations": 
-          [
-            {
-              "externalConfigurationId": "{yourUniqueConfigurationId}",
-              "configuratorId": "{configuratorId}",
-              "configurationName": "Konfiguracja 1 - update 1",
-              "options":
-              [
-                {
-                  "name": "{optionName}",
-                  "stepId": "Step1",
-                  "elementId": "{uniqueElementId}",
-                  "componentId": "{uniqueComponentId}",
-                  "value": "1"
-                },
-                {
-                  "name": "{optionName}",
-                  "stepId": "Step2",
-                  "elementId": "{uniqueElementId}",
-                  "componentId": "{uniqueComponentId}",
-                  "value": "10"
-                },
-                {
-                  "name": "{optionName}",
-                  "stepId": "Step2",
-                  "elementId": "{uniqueElementId}",
-                  "componentId": "{uniqueComponentId}",
-                  "value": "1"
-                },
-                {
-                  "name": "{optionName}",
-                  "stepId": "Step3",
-                  "elementId": "{uniqueElementId}",
-                  "componentId": "{uniqueComponentId}",
-                  "value": "1"
-                },
-                {
-                  "name": "{optionName}",
-                  "stepId": "Step4",
-                  "elementId": "{uniqueElementId}",
-                  "componentId": "{uniqueComponentId}",
-                  "value": "Z okazji imienin"
-                }
-              ],
-              "price": 128.00
-            }
-          ],
-      "price": 128.00
-    }
-    ```
-
-??? "Przykład odpowiedzi"
-    === "JSON"
-    ``` json
-    {
-        "message": "The command has been dispatched successfully.",
-        "data": [],
-        "errors": []
-    }
-    ```

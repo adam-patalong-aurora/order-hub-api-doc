@@ -1,0 +1,84 @@
+{
+  "externalConfigurationId": "1",
+  "configuratorId": "1ef359ad2512448c9015994251ae763c",
+  "name": "Album Dziecięcy",
+  "options": [
+    {
+      "name": "Format | 10x10",
+      "stepId": "1b91ee11375942b3a2349f64e01e1e84",
+      "elementId": "3b90ff70227c42a5ab775fe67cf6e513",
+      "componentId": "8b13fd4557cd4a3da465cecf986455ef",
+      "value": "1"
+    },
+    {
+      "name": "Format| Ilosc rozkładowek 10x10 | 5",
+      "stepId": "1b91ee11375942b3a2349f64e01e1e84",
+      "elementId": "1f50188501a546a0a14d025c40771798",
+      "componentId": "05bbe7ab4b844cd7960a36633621b12a",
+      "value": "5"
+    },
+    {
+      "name": "Okladka | Rodzaj oprawy | Camden",
+      "stepId": "f8cdbc4bf00b48d6ad9bb0cafcae1d2f",
+      "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+      "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+      "value": "1"
+    },
+    {
+      "name": "Okladka | Oprawa Camden | C21",
+      "stepId": "f8cdbc4bf00b48d6ad9bb0cafcae1d2f",
+      "elementId": "20960a5d22d74666b5fa8345f58975b9",
+      "componentId": "bc68c6b594c4442283682de178eb9098",
+      "value": "1"
+    },
+    {
+      "name": "Okładka | Gąbka | Bez gabki",
+      "stepId": "f8cdbc4bf00b48d6ad9bb0cafcae1d2f",
+      "elementId": "09f30c2e84aa4861ab0624bb90fd36ca",
+      "componentId": "f54effde502f4326b3bb5c72f21ba5d0",
+      "value": "1"
+    },
+    {
+      "name": "Okładka | Rogi okładki | Proste narożniki",
+      "stepId": "f8cdbc4bf00b48d6ad9bb0cafcae1d2f",
+      "elementId": "87d469ca7c0449feb795ab03eaea2153",
+      "componentId": "b626d5e1c4724848b85f915267347929",
+      "value": "1"
+    },
+    {
+      "name": "Blok | Papier | Jedwab",
+      "stepId": "8cb5c24f7e2e4f278b1a39221ab02d18",
+      "elementId": "b154bba8c8344514a2dc2a01744e7214",
+      "componentId": "1b193bbc950f44c88ef06026bfec262a",
+      "value": "1"
+    },
+    {
+      "name": "Blok | Narożniki | Niezaokrąglone",
+      "stepId": "8cb5c24f7e2e4f278b1a39221ab02d18",
+      "elementId": "71afa11128384f45bdc1c00147ea99b4",
+      "componentId": "62eb3ab780d54f55a4a8e3439b873c29",
+      "value": "1"
+    },
+    {
+      "name": "Blok | Kapitałka | Brak kapitałki",
+      "stepId": "8cb5c24f7e2e4f278b1a39221ab02d18",
+      "elementId": "b608a3b8c8764b0791d3f2e8d3310637",
+      "componentId": "dcad32f6cc4f4b7d890d74f0330ca708",
+      "value": "1"
+    },
+    {
+      "name": "Blok | Rozbiegówka Storyalbum | Brak",
+      "stepId": "8cb5c24f7e2e4f278b1a39221ab02d18",
+      "elementId": "eb019ec563fb4a8ab7890124adcb3659",
+      "componentId": "89613d79df374d7ab0c66f9d2d29405d",
+      "value": "1"
+    },
+    {
+      "name": "Personalizacja (przód) | Metoda | Brak",
+      "stepId": "dd82b954e68a43db9b2b54bb987bf7b2",
+      "elementId": "ff2c11d4d5b942e399046367f11fc886",
+      "componentId": "7996198adbc24bf199a84775f581d3f3",
+      "value": "1"
+    }
+  ]
+}

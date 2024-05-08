@@ -11,6 +11,7 @@
         ```json
         --8<-- "docs/orders/code/response.json"
         ```
+
 ## Krok po kroku
 
 ### Tworzenie zamówienia
@@ -18,7 +19,7 @@ Stwórz ciało zamówienia w formacie JSON stosując właściwe dla twojego skle
 
 ??? "Przykład jak powinno wyglądać zamówienie"
     === "JSON"
-        ```json linenums="1" hl_lines="2-45 132-137"
+        ```json linenums="1" hl_lines="2-32"
         --8<-- "docs/orders/code/body_create.json"
         ```
 
@@ -28,8 +29,8 @@ Na podstawie konfiguratora stwórz konfigurację zamówienia. Zamówienie może 
 
 ??? "Przykład ciała konfiguracji"
     === "JSON"
-        ```json linenums="1" hl_lines="46-130"
-        --8<-- "docs/orders/code/body_create.json"
+        ```json linenums="1"
+        --8<-- "docs/orders/code/configuration.json"
         ```
 
 ??? info "Informacja"

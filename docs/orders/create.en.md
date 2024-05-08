@@ -3,7 +3,7 @@
 ??? "Example of a complete order body containing one configuration"
     === "JSON"
         ```json
-        --8<-- "docs/orders/code/create.json"
+        --8<-- "docs/orders/code/body_create.json"
         ```
 ??? "Response sample"
     === "JSON"
@@ -18,8 +18,8 @@ Create an order body in JSON format using attributes and values appropriate for 
 
 ??? "Example of what an order should look like"
     === "JSON"
-        ```json linenums="1" hl_lines="2-45 132-137"
-        --8<-- "docs/orders/code/order_body_structure.json"
+        ```json linenums="1" hl_lines="2-32"
+        --8<-- "docs/orders/code/body_create.json"
         ```
 
 ## Configuration
@@ -28,8 +28,8 @@ Create an order configuration based on the configurator. An order may contain se
 
 ??? "Configuration body example"
     === "JSON"
-        ```json linenums="1" hl_lines="46-130"
-        --8<-- "docs/orders/code/configuration_body_structure.json"
+        ```json linenums="1"
+        --8<-- "docs/orders/code/configuration.json"
         ```
 
 ??? info "Information"

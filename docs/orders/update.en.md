@@ -1,125 +1,45 @@
 # Edit order
-## Order update
+
+Editing an order involves changing the values ​​of order attributes or configuration. To edit an order, send a query using the `PATCH` method to the API `/sales-channel-api/v1/orders/{id}`, where `{id}` is the id of the order you want to edit.
+
+???+ warning "Attention"
+    If the change concerns options, all options for this configuration must be provided.
+
+??? "Example of a complete order edit body containing one configuration"
+    === "JSON"
+        ```json
+        --8<-- "docs/orders/code/body_update.json"
+        ```
+
+
+??? "Response sample"
+    === "JSON"
+        ```json
+        --8<-- "docs/orders/code/response.json"
+        ```
+
+
+## Step by step
+
+### Order update
 Create the order body in JSON format using the updated attribute values.
 
 ???+ info "Information"
-    You can specify only the attributes you want to update.
+    You can specify just the attributes you want to update.
 
-??? "Example of what an order should look like"
-    === "JSON"
-    ```json
-    {
-      "configurations": 
-          [
-              { konfiguracja 1 },
-              { konfiguracja 2 }
-          ],
-      "price": 544.45,
-      "address": {
-        "street": "Testowa 1",
-        "city": "Warszawa",
-        "zipCode": "00-001",
-        "country": "PL"
-      },
-      "state": "draft",
-      "shippingMethod": "{shippingMethod}",
-      "deliveryDate": "2020-12-24"       
-    }
-    ```
+### Configuration update
 
-## Configuration update
-
-Create an updated order configuration based on the configurator. The configuration update is based on its `externalConfigurationId` attribute, which is required. The remaining attributes are optional, but if present, they must be compatible with the configurator.
+Create an updated order configuration based on the configurator. The configuration update is based on its `externalConfigurationId` attribute. The updated configuration must be complete. It must contain all configuration attributes.
  
 ???+ warning "Attention"
     If the change concerns options, all options for this configuration must be provided.
 
 ??? "Configuration body example"
     === "JSON"
-    ```json
-        {
-          "externalConfigurationId": "{yourUniqueConfigurationId}",
-          "configuratorId": "{configuratorId}",
-          "configurationName": "Konfiguracja 1",
-          "options":
-          [
-            {
-              "name": "{optionName}",
-              "stepId": "Step1",
-              "elementId": "{uniqueElementId}",
-              "componentId": "{uniqueComponentId}",
-              "value": "1"
-            }
-          ],
-          "price": 123.45
-        }
-    ```
+        ```json linenums="1" hl_lines="2"
+        --8<-- "docs/orders/code/configuration.json"
+        ```
 
-## Sending order updates
+### Sending order updates
 
 Send the order prepared according to the above guidelines as a query body using the `PATCH` method under the API `/sales-channel-api/v1/orders/{id}`, where `{id}` is the id of your order that you want to update. Place your [authorization data](../../authorization) in the query header.
-
-??? "Example of a complete order body containing one configuration, in which the configuration name, price and value of one of the options have been changed"
-    === "JSON"
-    ```json
-    {
-      "configurations": 
-          [
-            {
-              "externalConfigurationId": "{yourUniqueConfigurationId}",
-              "configuratorId": "{configuratorId}",
-              "configurationName": "Konfiguracja 1 - update 1",
-              "options":
-              [
-                {
-                  "name": "{optionName}",
-                  "stepId": "Step1",
-                  "elementId": "{uniqueElementId}",
-                  "componentId": "{uniqueComponentId}",
-                  "value": "1"
-                },
-                {
-                  "name": "{optionName}",
-                  "stepId": "Step2",
-                  "elementId": "{uniqueElementId}",
-                  "componentId": "{uniqueComponentId}",
-                  "value": "10"
-                },
-                {
-                  "name": "{optionName}",
-                  "stepId": "Step2",
-                  "elementId": "{uniqueElementId}",
-                  "componentId": "{uniqueComponentId}",
-                  "value": "1"
-                },
-                {
-                  "name": "{optionName}",
-                  "stepId": "Step3",
-                  "elementId": "{uniqueElementId}",
-                  "componentId": "{uniqueComponentId}",
-                  "value": "1"
-                },
-                {
-                  "name": "{optionName}",
-                  "stepId": "Step4",
-                  "elementId": "{uniqueElementId}",
-                  "componentId": "{uniqueComponentId}",
-                  "value": "Z okazji imienin"
-                }
-              ],
-              "price": 128.00
-            }
-          ],
-      "price": 128.00
-    }
-    ```
-
-??? "Response sample"
-    === "JSON"
-    ``` json
-    {
-        "message": "The command has been dispatched successfully.",
-        "data": [],
-        "errors": []
-    }
-    ```
