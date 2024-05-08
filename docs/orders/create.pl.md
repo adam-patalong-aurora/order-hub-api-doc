@@ -3,7 +3,7 @@
 ??? "Przykład ciała kompletnego zamówienia zawierającego jedną konfigurację"
     === "JSON"
         ```json
-        --8<-- "docs/orders/code/create.json"
+        --8<-- "docs/orders/code/body_create.json"
         ```
 
 ??? "Przykład odpowiedzi"
@@ -18,8 +18,8 @@ Stwórz ciało zamówienia w formacie JSON stosując właściwe dla twojego skle
 
 ??? "Przykład jak powinno wyglądać zamówienie"
     === "JSON"
-        ```json
-        --8<-- "docs/orders/code/order_body_structure.json"
+        ```json linenums="1" hl_lines="2-45 132-137"
+        --8<-- "docs/orders/code/body_create.json"
         ```
 
 ### Tworzenie konfiguracji
@@ -28,8 +28,8 @@ Na podstawie konfiguratora stwórz konfigurację zamówienia. Zamówienie może 
 
 ??? "Przykład ciała konfiguracji"
     === "JSON"
-        ```json
-        --8<-- "docs/orders/code/configuration_body_structure.json"
+        ```json linenums="1" hl_lines="46-130"
+        --8<-- "docs/orders/code/body_create.json"
         ```
 
 ??? info "Informacja"
