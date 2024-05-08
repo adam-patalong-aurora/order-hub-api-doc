@@ -1,0 +1,54 @@
+{
+  "externalOrderId": "1",
+  "shippingAddress": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "jdoe@example.com",
+    "phone": "123123123",
+    "street": "Test Street 20",
+    "city": "Test City",
+    "zipCode": "12345",
+    "country": "Test Country",
+    "companyName": "Test Company",
+    "vatId": "123123132123"
+  },
+  "billingAddress": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "jdoe@example.com",
+    "phone": "123123123",
+    "street": "Billing Street 20",
+    "city": "Billing City",
+    "zipCode": "12345",
+    "country": "Billing Country",
+    "companyName": "Billing Company",
+    "vatId": "123123132123"
+  },
+  "shippingMethod": {
+    "code": "courier",
+    "price": 10,
+    "pickupPoint": {
+      "id": "point_1",
+      "name": "Point 1",
+      "street": "Test Street 123",
+      "city": "Test City",
+      "zipCode": "22333",
+      "country": "Test Country"
+    }
+  },
+  "paymentMethod": {
+    "code": "card",
+    "isCod": false
+  },
+  "price": 100,
+  "deliveryDate": "2024-04-20",
+  "configurations": [
+    { Konfiguracja 1 },
+    { Konfiguracja 2 }
+  ],
+  "additionalData": [
+    {
+      "test_data": 123
+    }
+  ]
+}

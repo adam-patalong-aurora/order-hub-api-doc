@@ -1,29 +1,26 @@
 # Create an order
-## Order
+
+??? "Example of a complete order body containing one configuration"
+    === "JSON"
+        ```json
+        --8<-- "docs/orders/code/create.json"
+        ```
+??? "Response sample"
+    === "JSON"
+        ```json
+        --8<-- "docs/orders/code/response.json"
+        ```
+
+## Step by step
+
+### Create order
 Create an order body in JSON format using attributes and values appropriate for your store.
 
 ??? "Example of what an order should look like"
     === "JSON"
-    ```json
-    {
-      "externalOrderId": "1-01/2020",
-      "salesChannelId": "{your-sales-channel-id}",
-      "configurations": 
-          [
-              { configuration 1 },
-              { configuration 2 }
-          ],
-      "price": 544.45,
-      "address": {
-        "street": "Testowa 1",
-        "city": "Warszawa",
-        "zipCode": "00-001",
-        "country": "PL"
-      },
-      "shippingMethod": "{shippingMethod}",
-      "deliveryDate": "2020-12-24"       
-    }
-    ```
+        ```json
+        --8<-- "docs/orders/code/order_body_structure.json"
+        ```
 
 ## Configuration
 
@@ -31,24 +28,9 @@ Create an order configuration based on the configurator. An order may contain se
 
 ??? "Configuration body example"
     === "JSON"
-    ```json
-        {
-          "externalConfigurationId": "{yourUniqueConfigurationId}",
-          "configuratorId": "{configuratorId}",
-          "configurationName": "Konfiguracja 1",
-          "options":
-          [
-            {
-              "name": "{optionName}",
-              "stepId": "Step1",
-              "elementId": "{uniqueElementId}",
-              "componentId": "{uniqueComponentId}",
-              "value": "1"
-            }
-          ],
-          "price": 123.45
-        }
-    ```
+        ```json
+        --8<-- "docs/orders/code/configuration_body_structure.json"
+        ```
 
 ??? info "Information"
     The entire order may be large in size. It depends on the number of configurations the order has and the options included in them.
@@ -56,78 +38,3 @@ Create an order configuration based on the configurator. An order may contain se
 ## Sending the order
 
 Send the order prepared according to the above information as a query body using the `POST` method under the API `/api/v1/sales-channels-orders`. Place [authorization data](../../authorization) in the query header.
-
-??? "Example of a complete order body containing one configuration"
-    === "JSON"
-    ```json
-    {
-      "externalOrderId": "1-01/2020",
-      "salesChannelId": "{your-sales-channel-id}",
-      "configurations": 
-          [
-            {
-              "externalConfigurationId": "{yourUniqueConfigurationId}",
-              "configuratorId": "{configuratorId}",
-              "configurationName": "Konfiguracja 1",
-              "options":
-              [
-                {
-                  "name": "{optionName}",
-                  "stepId": "Step1",
-                  "elementId": "{uniqueElementId}",
-                  "componentId": "{uniqueComponentId}",
-                  "value": "1"
-                },
-                {
-                  "name": "{optionName}",
-                  "stepId": "Step2",
-                  "elementId": "{uniqueElementId}",
-                  "componentId": "{uniqueComponentId}",
-                  "value": "10"
-                },
-                {
-                  "name": "{optionName}",
-                  "stepId": "Step2",
-                  "elementId": "{uniqueElementId}",
-                  "componentId": "{uniqueComponentId}",
-                  "value": "1"
-                },
-                {
-                  "name": "{optionName}",
-                  "stepId": "Step3",
-                  "elementId": "{uniqueElementId}",
-                  "componentId": "{uniqueComponentId}",
-                  "value": "1"
-                },
-                {
-                  "name": "{optionName}",
-                  "stepId": "Step4",
-                  "elementId": "{uniqueElementId}",
-                  "componentId": "{uniqueComponentId}",
-                  "value": "Z okazji urodzin"
-                }
-              ],
-              "price": 544.45
-            }
-          ],
-      "price": 544.45,
-      "address": {
-        "street": "Testowa 1",
-        "city": "Warszawa",
-        "zipCode": "00-001",
-        "country": "PL"
-      },
-      "shippingMethod": "{shippingMethod}",
-      "deliveryDate": "2020-12-24"       
-    }
-    ```
-
-??? "Response sample"
-    === "JSON"
-    ``` json
-    {
-        "message": "The command has been dispatched successfully.",
-        "data": [],
-        "errors": []
-    }
-    ```
