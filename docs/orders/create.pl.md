@@ -38,4 +38,4 @@ Na podstawie konfiguratora stwórz konfigurację zamówienia. Zamówienie może 
 
 ### Wysyłanie zamówienia
 
-Przygotowane według powyższych wytycznych zamówienie wyślij jako ciało zapytania metodą `POST` pod API `/sales-channel-api/v1/orders`. W nagłówku zapytania umieść [dane autoryzacyjne](../../authorization).
+Przygotowane według powyższych wytycznych zamówienie wyślij jako ciało zapytania metodą `POST` pod API `{{ domain.base_url }}/sales-channel-api/v1/orders`. W nagłówku zapytania umieść [dane autoryzacyjne](../../authorization).

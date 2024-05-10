@@ -37,4 +37,4 @@ Create an order configuration based on the configurator. An order may contain se
 
 ## Sending the order
 
-Send the order prepared according to the above information as a query body using the `POST` method under the API `/api/v1/sales-channels-orders`. Place [authorization data](../../authorization) in the query header.
+Send the order prepared according to the above information as a query body using the `POST` method under the API `{{ domain.base_url }}/api/v1/sales-channels-orders`. Place [authorization data](../../authorization) in the query header.

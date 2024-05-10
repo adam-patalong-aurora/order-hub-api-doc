@@ -14,4 +14,5 @@ required packages:
 ```
 pip install mkdocs-material
 pip install mkdocs-static-i18n
+pip install mkdocs-markdownextradata-plugin
 ```

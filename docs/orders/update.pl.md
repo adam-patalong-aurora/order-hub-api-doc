@@ -1,6 +1,6 @@
 # Edycja zamówienia
 
-Edycja zamówienia polega na zmianie wartości atrybutów zamówienia lub konfiguracji. W celu edycji zamówienia należy wysłać zapytanie metodą `PATCH` pod API `/sales-channel-api/v1/orders/{id}`, gdzie `{id}` to id zamówienia, które chcesz edytować.
+Edycja zamówienia polega na zmianie wartości atrybutów zamówienia lub konfiguracji. W celu edycji zamówienia należy wysłać zapytanie metodą `PATCH` pod API `{{ domain.base_url }}/sales-channel-api/v1/orders/{id}`, gdzie `{id}` to id zamówienia, które chcesz edytować.
 
 ???+ warning "Uwaga"
     Jeżeli zmiana dotyczy opcji, to należy podać wszystkie opcje tej konfiguracji.
@@ -42,4 +42,4 @@ Na podstawie posiadanego konfiguratora stwórz zaktualizowaną konfigurację zam
 
 ### Wysyłanie aktualizacji zamówienia
 
-Przygotowane według powyższych wytycznych zamówienie wyślij jako ciało zapytania metodą `PATCH` pod API `/sales-channel-api/v1/orders/{id}`, gdzie `{id}` to id Twojego zamówienia, które chcesz aktualizować. W nagłówku zapytania umieść swoje [dane autoryzacyjne](../../authorization).
+Przygotowane według powyższych wytycznych zamówienie wyślij jako ciało zapytania metodą `PATCH` pod API `{{ domain.base_url }}/sales-channel-api/v1/orders/{id}`, gdzie `{id}` to id Twojego zamówienia, które chcesz aktualizować. W nagłówku zapytania umieść swoje [dane autoryzacyjne](../../authorization).

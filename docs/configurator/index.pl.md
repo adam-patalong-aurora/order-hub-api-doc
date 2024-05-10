@@ -1,0 +1,2 @@
+# Wprowadzenie
+Składanie oraz edycja zamówień odbywa się na podstawie konfiguratora, którego należy w dowolny sposób zaimplementować w swoim sklepie. Jest on kluczowy w celu stworzenia prawidłowej konfiguracji. Szczególną uwagę należy zwrócić na prawidłowe przekazanie ID komponentów. Na jego podstawie tworzysz konfigurację. O szczegółach tworzenia zamówień dowiesz się w zakładce [Zamówienia](../orders).

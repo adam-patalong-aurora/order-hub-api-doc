@@ -1,6 +1,6 @@
 # Edit order
 
-Editing an order involves changing the values ​​of order attributes or configuration. To edit an order, send a query using the `PATCH` method to the API `/sales-channel-api/v1/orders/{id}`, where `{id}` is the id of the order you want to edit.
+Editing an order involves changing the values of order attributes or configuration. To edit an order, send a query using the `PATCH` method to the API `{{ domain.base_url }}/sales-channel-api/v1/orders/{id}`, where `{id}` is the id of the order you want to edit.
 
 ???+ warning "Attention"
     If the change concerns options, all options for this configuration must be provided.
@@ -42,4 +42,4 @@ Create an updated order configuration based on the configurator. The configurati
 
 ### Sending order updates
 
-Send the order prepared according to the above guidelines as a query body using the `PATCH` method under the API `/sales-channel-api/v1/orders/{id}`, where `{id}` is the id of your order that you want to update. Place your [authorization data](../../authorization) in the query header.
+Send the order prepared according to the above guidelines as a query body using the `PATCH` method under the API `{{ domain.base_url }}/sales-channel-api/v1/orders/{id}`, where `{id}` is the id of your order that you want to update. Place your [authorization data](../../authorization) in the query header.
