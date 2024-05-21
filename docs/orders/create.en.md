@@ -52,4 +52,7 @@ If you do not want to add additional prints, do not add the `photoPrints` attrib
 
 ## Sending the order
 
+???+ warning "Information"
+    The order must have at least one of the options: configuration or photo prints.
+
 Send the order prepared according to the above information as a query body using the `POST` method under the API `{{ domain.base_url }}/api/v1/sales-channels-orders`. Place [authorization data](../../authorization) in the query header.

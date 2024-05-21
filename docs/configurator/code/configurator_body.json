@@ -1,0 +1,161 @@
+{
+  "message": "Ok",
+  "data": {
+    "id": "b27a15ca110e464a8889cf71e7d50bbb",
+    "name": "Mini Tradycyjny",
+    "steps": [
+      {
+        "id": "7bcc9974876e4b5f917693b91990fc3c",
+        "name": "Rozmiar",
+        "elements": [
+          {
+            "id": "fcc73c0dc71d4105988cd1ab2f8b7340",
+            "name": "[Album Mini Tradycyjny] Rozmiar",
+            "components": [
+              {
+                "id": "5d65691e6e00412f8a995528c8d30a5c",
+                "name": "15x23",
+                "conditions": []
+              },
+              {
+                "id": "6ccd6af3aaea4a4f9046abd8c61062e9",
+                "name": "18x27",
+                "conditions": []
+              }
+            ]
+          },
+          {
+            "id": "88cefd41eb8649449ecd3e8786a04f8b",
+            "name": "[Uwaga] Albumy mini Tradycyjne ilosc kart",
+            "components": [
+              {
+                "id": "371ad9931317490f8cf916eaf52f2e8b",
+                "name": "Uwaga !",
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "7bcc9974876e4b5f917693b91990fc3c",
+                    "elementId": "fcc73c0dc71d4105988cd1ab2f8b7340",
+                    "componentId": "5d65691e6e00412f8a995528c8d30a5c",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "8f832e0cf43141869f9d1ff8c0648970",
+                "name": "Uwaga !",
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "7bcc9974876e4b5f917693b91990fc3c",
+                    "elementId": "fcc73c0dc71d4105988cd1ab2f8b7340",
+                    "componentId": "6ccd6af3aaea4a4f9046abd8c61062e9",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "63fa3d1e49914f3f8d76273e902fe005",
+            "name": "[Album Mini Tradycyjny] Ilość 15x23",
+            "components": [
+              {
+                "id": "2a1495cbb853433c8be9e35d16020620",
+                "name": "Jeden album",
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "7bcc9974876e4b5f917693b91990fc3c",
+                    "elementId": "fcc73c0dc71d4105988cd1ab2f8b7340",
+                    "componentId": "5d65691e6e00412f8a995528c8d30a5c",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "d565afb5ac584082b9ec25190064ad1e",
+                "name": "Zestaw 5 sztuk albumów",
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "7bcc9974876e4b5f917693b91990fc3c",
+                    "elementId": "fcc73c0dc71d4105988cd1ab2f8b7340",
+                    "componentId": "5d65691e6e00412f8a995528c8d30a5c",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "93d6f7c47b9c4fea83fbc9563db64fa1",
+                "name": "Zestaw 20 sztuk albumów",
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "7bcc9974876e4b5f917693b91990fc3c",
+                    "elementId": "fcc73c0dc71d4105988cd1ab2f8b7340",
+                    "componentId": "5d65691e6e00412f8a995528c8d30a5c",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "aef9f2aa826b4523866bb3f943d5564e",
+            "name": "[Album Mini Tradycyjny] Ilość 18x27",
+            "components": [
+              {
+                "id": "4f7a9fecce9a4f27a3db503bd94957f3",
+                "name": "Jeden album",
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "7bcc9974876e4b5f917693b91990fc3c",
+                    "elementId": "fcc73c0dc71d4105988cd1ab2f8b7340",
+                    "componentId": "6ccd6af3aaea4a4f9046abd8c61062e9",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "f1cd9cc4a3864c2dbf120065ff66f218",
+                "name": "Zestaw 5 sztuk albumów",
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "7bcc9974876e4b5f917693b91990fc3c",
+                    "elementId": "fcc73c0dc71d4105988cd1ab2f8b7340",
+                    "componentId": "6ccd6af3aaea4a4f9046abd8c61062e9",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "b30ad9c0232046978289877c6a6ef041",
+                "name": "Zestaw 20 sztuk albumów",
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "7bcc9974876e4b5f917693b91990fc3c",
+                    "elementId": "fcc73c0dc71d4105988cd1ab2f8b7340",
+                    "componentId": "6ccd6af3aaea4a4f9046abd8c61062e9",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

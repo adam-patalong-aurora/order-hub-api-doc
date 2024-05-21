@@ -1,5 +1,5 @@
 site_name: Order Hub - Documentation
-site_url: https://adam-patalong-aurora.github.io/order-hub-api-doc/
+site_url: https://orderhubdocs.dev.aur.ac/
 
 docs_dir: docs/
 
@@ -37,6 +37,7 @@ nav:
   - Configurator:
       - configurator/index.md
       - configurator/configurator_list.md
+      - configurator/configurator_implementation.md
   - Orders:
       - orders/index.md
       - orders/create.md
@@ -70,8 +71,8 @@ plugins:
             Orders: Zamówienia
 extra:
   domain:
-    base_url: https://orderhub.dev.aur.ac
-  configurator_source_path: https://crystalalbums.devsiteac.com/plugins/configurator/
+    base_url: https://ohbe.crystal-albums.pl
+  configurator_source_path: https://ohbe.crystal-albums.pl/sales-channel-api/v1/configurators
 
 markdown_extensions:
   - pymdownx.highlight:

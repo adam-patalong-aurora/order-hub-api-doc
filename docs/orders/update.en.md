@@ -47,7 +47,7 @@ Create an updated order configuration based on the configurator. The configurati
         --8<-- "docs/orders/code/configuration.json"
         ```
 
-### Additional prints updated
+### Photo prints updated
 
 Based on your configurator, create updated data for additional prints of the order. Updating additional prints is based on their `externalPhotoPrintId` attribute. In the `formats` attribute, you must re-enter all additional print data for this `externalPhotoPrintId`.
 

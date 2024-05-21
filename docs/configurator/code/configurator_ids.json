@@ -1,0 +1,90 @@
+{
+  "message": "Ok",
+  "data": [
+    {
+      "name": "Wzornik",
+      "id": "cf0aec39b4e54ecf8f681a03dab87c71"
+    },
+    {
+      "name": "Album Pokazowy ",
+      "id": "0266ff6d43564369a01388444255839e"
+    },
+    {
+      "name": "Mini Tradycyjny",
+      "id": "b27a15ca110e464a8889cf71e7d50bbb"
+    },
+    {
+      "name": "Pudełka",
+      "id": "b6cf1ef7c0754c8ba96bc396f706fd42"
+    },
+    {
+      "name": "Pudełko na odbitki",
+      "id": "43da64dae3074b1091660b3dc977519f"
+    },
+    {
+      "name": "Teczki na odbitki",
+      "id": "5a13fbfb105345d49f9e85ec0ae5e07a"
+    },
+    {
+      "name": "Koperta na zdjęcia",
+      "id": "debbe4ae4dbd43e2a43ddfaaae8ff638"
+    },
+    {
+      "name": "Album Eko",
+      "id": "7e1709c10cd748fe8389a65ae2c8a6fe"
+    },
+    {
+      "name": "Album Dziecięcy",
+      "id": "1ef359ad2512448c9015994251ae763c"
+    },
+    {
+      "name": "Odbitki fotograficzne",
+      "id": "ccff4d57205a49cc90bd4c3c9f4d9022"
+    },
+    {
+      "name": "Storyalbum",
+      "id": "3dbc652268cd427780f7414878be1eb4"
+    },
+    {
+      "name": "Odbitka fotograficzna",
+      "id": "e2bd8a52c618422ca0df1caff1a0a8e9"
+    },
+    {
+      "name": "Worki",
+      "id": "a8a78603638746dd99181857692dbdb8"
+    },
+    {
+      "name": "Album tradycyjny",
+      "id": "26c91e8d372f4306903d82eebd0ae872"
+    },
+    {
+      "name": "Pendrive",
+      "id": "8023ee1158484556bcddf93516c14d96"
+    },
+    {
+      "name": "CrystalBoard",
+      "id": "befd9cda74c0473a9dcdaa9cbcc6d270"
+    },
+    {
+      "name": "Foto-obrazy",
+      "id": "7f8d1d6a6cbc427b929e21eaec35d973"
+    },
+    {
+      "name": "test",
+      "id": "e3f347988dcf43359266c7d43e74b063"
+    },
+    {
+      "name": "Storybook",
+      "id": "d2d3240911814108b66615de95cd536d"
+    },
+    {
+      "name": "Własna matryca do tłoczeń",
+      "id": "4df74b4f41ab43a49e4b071551a817d3"
+    },
+    {
+      "name": "CrystalBox",
+      "id": "d4902dd242e940e4ba25a3c4514da5c8"
+    }
+  ],
+  "errors": []
+}
