@@ -1,0 +1,28 @@
+{
+  "conditions": [
+    {
+      "type": "any",
+      "stepId": "37a463e4376d454b95acb97b41c20485",
+      "elementId": "9fcf6fe709be46129470014569a00d52",
+      "componentId": "1d23e593dfeb4b7092ac9e60237076a5",
+      "operator": "eq",
+      "value": "1"
+    },
+    {
+      "type": "any",
+      "stepId": "37a463e4376d454b95acb97b41c20485",
+      "elementId": "9fcf6fe709be46129470014569a00d52",
+      "componentId": "27e3d70ffa314cf382935c544df42ded",
+      "operator": "eq",
+      "value": "1"
+    },
+    {
+      "type": "any",
+      "stepId": "37a463e4376d454b95acb97b41c20485",
+      "elementId": "9fcf6fe709be46129470014569a00d52",
+      "componentId": "133a9bf48d2b48ee9a22f193f9137738",
+      "operator": "eq",
+      "value": "1"
+    }
+  ]
+}

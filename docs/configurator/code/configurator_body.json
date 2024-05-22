@@ -1,104 +1,94 @@
 {
   "message": "Ok",
   "data": {
-    "id": "b27a15ca110e464a8889cf71e7d50bbb",
-    "name": "Mini Tradycyjny",
+    "id": "3dbc652268cd427780f7414878be1eb4",
+    "name": "Storyalbum",
     "steps": [
       {
-        "id": "7bcc9974876e4b5f917693b91990fc3c",
-        "name": "Rozmiar",
+        "id": "37a463e4376d454b95acb97b41c20485",
+        "name": "Format",
         "elements": [
           {
-            "id": "fcc73c0dc71d4105988cd1ab2f8b7340",
-            "name": "[Album Mini Tradycyjny] Rozmiar",
+            "id": "9fcf6fe709be46129470014569a00d52",
+            "name": "Produkt [Storyalbum] [1] Wybierz format",
+            "required": true,
             "components": [
               {
-                "id": "5d65691e6e00412f8a995528c8d30a5c",
-                "name": "15x23",
-                "conditions": []
+                "id": "1d23e593dfeb4b7092ac9e60237076a5",
+                "name": "20x20",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                ]
               },
               {
-                "id": "6ccd6af3aaea4a4f9046abd8c61062e9",
-                "name": "18x27",
-                "conditions": []
+                "id": "d416f4cf848b44feadada9306901adc4",
+                "name": "20x30",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                ]
+              },
+              {
+                "id": "27e3d70ffa314cf382935c544df42ded",
+                "name": "25x25",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                ]
+              },
+              {
+                "id": "5d0036c0a128424d92d986cf2181ed9a",
+                "name": "25x38",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                ]
+              },
+              {
+                "id": "133a9bf48d2b48ee9a22f193f9137738",
+                "name": "30x30",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                ]
               }
             ]
           },
           {
-            "id": "88cefd41eb8649449ecd3e8786a04f8b",
-            "name": "[Uwaga] Albumy mini Tradycyjne ilosc kart",
+            "id": "2d64e4d0478246c582de4df9953c80ce",
+            "name": "Produkt [Storyalbum] [2] 20x20 dodatkowe strony",
+            "required": true,
             "components": [
               {
-                "id": "371ad9931317490f8cf916eaf52f2e8b",
-                "name": "Uwaga !",
+                "id": "d66bb2017d1b4e04a9c81f165896af31",
+                "name": "Ilość rozkładówek",
+                "type": "numeric",
+                "valueRange": {
+                  "min": 10,
+                  "max": 35
+                },
                 "conditions": [
                   {
                     "type": "any",
-                    "stepId": "7bcc9974876e4b5f917693b91990fc3c",
-                    "elementId": "fcc73c0dc71d4105988cd1ab2f8b7340",
-                    "componentId": "5d65691e6e00412f8a995528c8d30a5c",
-                    "operator": "eq",
-                    "value": "1"
-                  }
-                ]
-              },
-              {
-                "id": "8f832e0cf43141869f9d1ff8c0648970",
-                "name": "Uwaga !",
-                "conditions": [
-                  {
-                    "type": "any",
-                    "stepId": "7bcc9974876e4b5f917693b91990fc3c",
-                    "elementId": "fcc73c0dc71d4105988cd1ab2f8b7340",
-                    "componentId": "6ccd6af3aaea4a4f9046abd8c61062e9",
-                    "operator": "eq",
-                    "value": "1"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "63fa3d1e49914f3f8d76273e902fe005",
-            "name": "[Album Mini Tradycyjny] Ilość 15x23",
-            "components": [
-              {
-                "id": "2a1495cbb853433c8be9e35d16020620",
-                "name": "Jeden album",
-                "conditions": [
-                  {
-                    "type": "any",
-                    "stepId": "7bcc9974876e4b5f917693b91990fc3c",
-                    "elementId": "fcc73c0dc71d4105988cd1ab2f8b7340",
-                    "componentId": "5d65691e6e00412f8a995528c8d30a5c",
-                    "operator": "eq",
-                    "value": "1"
-                  }
-                ]
-              },
-              {
-                "id": "d565afb5ac584082b9ec25190064ad1e",
-                "name": "Zestaw 5 sztuk albumów",
-                "conditions": [
-                  {
-                    "type": "any",
-                    "stepId": "7bcc9974876e4b5f917693b91990fc3c",
-                    "elementId": "fcc73c0dc71d4105988cd1ab2f8b7340",
-                    "componentId": "5d65691e6e00412f8a995528c8d30a5c",
-                    "operator": "eq",
-                    "value": "1"
-                  }
-                ]
-              },
-              {
-                "id": "93d6f7c47b9c4fea83fbc9563db64fa1",
-                "name": "Zestaw 20 sztuk albumów",
-                "conditions": [
-                  {
-                    "type": "any",
-                    "stepId": "7bcc9974876e4b5f917693b91990fc3c",
-                    "elementId": "fcc73c0dc71d4105988cd1ab2f8b7340",
-                    "componentId": "5d65691e6e00412f8a995528c8d30a5c",
+                    "stepId": "37a463e4376d454b95acb97b41c20485",
+                    "elementId": "9fcf6fe709be46129470014569a00d52",
+                    "componentId": "1d23e593dfeb4b7092ac9e60237076a5",
                     "operator": "eq",
                     "value": "1"
                   }
@@ -107,46 +97,1403 @@
             ]
           },
           {
-            "id": "aef9f2aa826b4523866bb3f943d5564e",
-            "name": "[Album Mini Tradycyjny] Ilość 18x27",
+            "id": "022d3549878b4ac39d31381366bf7a2f",
+            "name": "Produkt [Storyalbum] [2] 20x30 dodatkowe strony",
+            "required": true,
             "components": [
               {
-                "id": "4f7a9fecce9a4f27a3db503bd94957f3",
-                "name": "Jeden album",
+                "id": "8ad3f709b6694371ab09e5fd6f0745ef",
+                "name": "Ilość rozkładówek",
+                "type": "numeric",
+                "valueRange": {
+                  "min": 10,
+                  "max": 40
+                },
                 "conditions": [
                   {
                     "type": "any",
-                    "stepId": "7bcc9974876e4b5f917693b91990fc3c",
-                    "elementId": "fcc73c0dc71d4105988cd1ab2f8b7340",
-                    "componentId": "6ccd6af3aaea4a4f9046abd8c61062e9",
+                    "stepId": "37a463e4376d454b95acb97b41c20485",
+                    "elementId": "9fcf6fe709be46129470014569a00d52",
+                    "componentId": "d416f4cf848b44feadada9306901adc4",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "af006bf3d46646abb249f781a57c446d",
+            "name": "Produkt [Storyalbum] [2] 25x25 dodatkowe strony",
+            "required": true,
+            "components": [
+              {
+                "id": "9ca8aecbe4c14403a6b7da4b18df727d",
+                "name": "Ilość rozkładówek",
+                "type": "numeric",
+                "valueRange": {
+                  "min": 10,
+                  "max": 35
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "37a463e4376d454b95acb97b41c20485",
+                    "elementId": "9fcf6fe709be46129470014569a00d52",
+                    "componentId": "27e3d70ffa314cf382935c544df42ded",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "c1e727a5005e4c978657d2a71d531a39",
+            "name": "Produkt [Storyalbum] [2] 25x38 dodatkowe strony",
+            "required": true,
+            "components": [
+              {
+                "id": "daa1444d626b4f1a839d4e7c46739f8d",
+                "name": "Ilość rozkładówek",
+                "type": "numeric",
+                "valueRange": {
+                  "min": 10,
+                  "max": 35
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "37a463e4376d454b95acb97b41c20485",
+                    "elementId": "9fcf6fe709be46129470014569a00d52",
+                    "componentId": "5d0036c0a128424d92d986cf2181ed9a",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "e5bd251f98984392ae474dd258613216",
+            "name": "Produkt [Storyalbum] [2] 30x30 dodatkowe strony",
+            "required": true,
+            "components": [
+              {
+                "id": "14e89f9ffc034a87bea5fb640a0c6ccd",
+                "name": "Ilość rozkładówek",
+                "type": "numeric",
+                "valueRange": {
+                  "min": 10,
+                  "max": 35
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "37a463e4376d454b95acb97b41c20485",
+                    "elementId": "9fcf6fe709be46129470014569a00d52",
+                    "componentId": "133a9bf48d2b48ee9a22f193f9137738",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "18f95860849345fca9765df11ac489ac",
+        "name": "Okładka",
+        "elements": [
+          {
+            "id": "eddd012396ef46e5b1292e651eec8cf2",
+            "name": "[Oprawa] [1] Wybierz rodzaj oprawy",
+            "required": true,
+            "components": [
+              {
+                "id": "72959d7c89a94dbbba33bfb6d5c39a75",
+                "name": "Camden",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                ]
+              },
+              {
+                "id": "f80c28c92aa346f2b1788d51b5c62925",
+                "name": "Classic",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                ]
+              },
+              {
+                "id": "9408e35065d74631a42efa989312c317",
+                "name": "Velvet",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                ]
+              },
+              {
+                "id": "1ffc7fa8bcf44ca0b9930ef647d04b04",
+                "name": "Natural",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                ]
+              }
+            ]
+          },
+          {
+            "id": "20960a5d22d74666b5fa8345f58975b9",
+            "name": "[Oprawa] [2] Camden",
+            "required": true,
+            "components": [
+              {
+                "id": "bc68c6b594c4442283682de178eb9098",
+                "name": "C21",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
                     "operator": "eq",
                     "value": "1"
                   }
                 ]
               },
               {
-                "id": "f1cd9cc4a3864c2dbf120065ff66f218",
-                "name": "Zestaw 5 sztuk albumów",
+                "id": "10dd068166f74e938bf9a76bbbbc3ca6",
+                "name": "C22",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
                 "conditions": [
                   {
                     "type": "any",
-                    "stepId": "7bcc9974876e4b5f917693b91990fc3c",
-                    "elementId": "fcc73c0dc71d4105988cd1ab2f8b7340",
-                    "componentId": "6ccd6af3aaea4a4f9046abd8c61062e9",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
                     "operator": "eq",
                     "value": "1"
                   }
                 ]
               },
               {
-                "id": "b30ad9c0232046978289877c6a6ef041",
-                "name": "Zestaw 20 sztuk albumów",
+                "id": "6875675dde154a7b87af41742f44176e",
+                "name": "C23",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
                 "conditions": [
                   {
                     "type": "any",
-                    "stepId": "7bcc9974876e4b5f917693b91990fc3c",
-                    "elementId": "fcc73c0dc71d4105988cd1ab2f8b7340",
-                    "componentId": "6ccd6af3aaea4a4f9046abd8c61062e9",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "06ad356462004dcd91fb67a4023c7f0b",
+                "name": "C24",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "322b817278e240fb9ad6c2c490651965",
+                "name": "C25",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "c8caf6e2ee9a4921a18472795403f0a9",
+                "name": "C26",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "9e2503948829492fb4e22401b0396652",
+                "name": "C27",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "f5daf0a81488453e9a394c0dfbadd43d",
+                "name": "C28",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "3ef3049af989412e91662e5c3d376bb5",
+                "name": "C29",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "19068997a666497ab0012ff0822a540f",
+                "name": "C30",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "edc3294f597341d6ac6aa70e401267cb",
+                "name": "C31",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "f30a7ad1ffee487fad1c45302b7df9b8",
+                "name": "C32",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "f8ae9c2007464f20aa54b4c306cc3e55",
+                "name": "C33",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "580563ba9bd24ad4ba58f61e0fa8d779",
+                "name": "C34",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "6b7b0828bef54e078bab808ff91669c8",
+                "name": "C35",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "8ed1335fea8f47f4baa7b0175091216a",
+                "name": "C36",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "92f4f201bcde40b6ac0782b9b87bdd02",
+                "name": "C37",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "e27205b9c6ca477b90d1c0b8df99c839",
+                "name": "C38",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "67b780a052304c12bdeed1752af14ebe",
+            "name": "[Oprawa] [2] Classic",
+            "required": true,
+            "components": [
+              {
+                "id": "1f584eb7735a4f0db4e605f0229e9109",
+                "name": "C01",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "f80c28c92aa346f2b1788d51b5c62925",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "eec64dda74b94f1da5ea35eafceed82e",
+                "name": "C03",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "f80c28c92aa346f2b1788d51b5c62925",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "dd668e1bd4a8452886a6ac687ac6075c",
+                "name": "C04",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "f80c28c92aa346f2b1788d51b5c62925",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "e396b900247546f2833555c9dc953de4",
+                "name": "C05",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "f80c28c92aa346f2b1788d51b5c62925",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "57f05a24eee244a6b8039f55b51238f1",
+                "name": "C07",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "f80c28c92aa346f2b1788d51b5c62925",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "4fac6a9caa964a6b915a490366b76df6",
+                "name": "C08",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "f80c28c92aa346f2b1788d51b5c62925",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "7735344c2ec04262bd79060f0557f1f5",
+                "name": "C09",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "f80c28c92aa346f2b1788d51b5c62925",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "daf6971c5667447291034b5fec255334",
+                "name": "C11",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "f80c28c92aa346f2b1788d51b5c62925",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "545c962aeb6c479fba8c660a656326c1",
+            "name": "[Oprawa] [2] Natural",
+            "required": true,
+            "components": [
+              {
+                "id": "89c28eae9f8e4107abd17bf97a6f2edd",
+                "name": "NT1",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "1ffc7fa8bcf44ca0b9930ef647d04b04",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "b72621e7d3964b5c97e319ee45aed3a2",
+                "name": "NT2",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "1ffc7fa8bcf44ca0b9930ef647d04b04",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "b813124d169d4a1e86551cda922d674e",
+                "name": "NT3",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "1ffc7fa8bcf44ca0b9930ef647d04b04",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "b4ace6be8571411a819e27f938b2f672",
+                "name": "NT4",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "1ffc7fa8bcf44ca0b9930ef647d04b04",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "b14914a9d81645bba6cce2ebc9145ac1",
+                "name": "NT5",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "1ffc7fa8bcf44ca0b9930ef647d04b04",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "9557f6f5bf30421180472b1f37588197",
+                "name": "NT6",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "1ffc7fa8bcf44ca0b9930ef647d04b04",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "30f035f8dfee4504a717d1650398487b",
+                "name": "NT7",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "1ffc7fa8bcf44ca0b9930ef647d04b04",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "fdcf80a9b96b4419a1b44eebc78a8827",
+                "name": "NT8",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "1ffc7fa8bcf44ca0b9930ef647d04b04",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "6e63a3b0e8304522831fa4f67bee8a94",
+                "name": "NT9",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "1ffc7fa8bcf44ca0b9930ef647d04b04",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "6cf398d2a0d945a487ac270b6c9c99cc",
+                "name": "NT10",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "1ffc7fa8bcf44ca0b9930ef647d04b04",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "1c6bfe30e7154f84b59895f8429b6db6",
+                "name": "NT11",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "1ffc7fa8bcf44ca0b9930ef647d04b04",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "0d6f5202b52b47ee91e1cf9c36c6459d",
+                "name": "NT12",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "1ffc7fa8bcf44ca0b9930ef647d04b04",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "0c00bccc499042efba88ae7de381b580",
+                "name": "NT13",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "1ffc7fa8bcf44ca0b9930ef647d04b04",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "17a5379d85c541a78696f9cc599cb522",
+                "name": "NT14",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "1ffc7fa8bcf44ca0b9930ef647d04b04",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "79ef29e8efac4fcbbd89c77414b4cd71",
+            "name": "[Oprawa] [2] Velvet",
+            "required": true,
+            "components": [
+              {
+                "id": "dc47d96193ec48ecae2bbef8c269974b",
+                "name": "V21",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "9408e35065d74631a42efa989312c317",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "4272af91a5a045868c8068e097334217",
+                "name": "V22",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "9408e35065d74631a42efa989312c317",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "37acef67cfa4442d9cab20211179a495",
+                "name": "V23",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "9408e35065d74631a42efa989312c317",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "6064df88fd9146b49aa4c4764e50a1d7",
+                "name": "V24",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "9408e35065d74631a42efa989312c317",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "459bfcaf8fbe40bcbcf230058ad77865",
+                "name": "V25",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "9408e35065d74631a42efa989312c317",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "1d43a4e15c2d4290bc471eb8e7bd5496",
+                "name": "V26",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "9408e35065d74631a42efa989312c317",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "4150806c7edc417caf5257d02dcd4574",
+                "name": "V27",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "9408e35065d74631a42efa989312c317",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "3d50220aed1b46d6b19cac56350ec48b",
+                "name": "V28",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "9408e35065d74631a42efa989312c317",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "e9c7358c2e52446ba3274c08c905d1a2",
+                "name": "V29",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "9408e35065d74631a42efa989312c317",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "09f30c2e84aa4861ab0624bb90fd36ca",
+            "name": "[Oprawa] [3] Gąbka",
+            "required": true,
+            "components": [
+              {
+                "id": "f54effde502f4326b3bb5c72f21ba5d0",
+                "name": "Nie",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  },
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "f80c28c92aa346f2b1788d51b5c62925",
+                    "operator": "eq",
+                    "value": "1"
+                  },
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "9408e35065d74631a42efa989312c317",
+                    "operator": "eq",
+                    "value": "1"
+                  },
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "1ffc7fa8bcf44ca0b9930ef647d04b04",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "c5fbe78d45a84375808e274ca601c31c",
+                "name": "Tak",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "f80c28c92aa346f2b1788d51b5c62925",
+                    "operator": "eq",
+                    "value": "1"
+                  },
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "9408e35065d74631a42efa989312c317",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "513786100d564d5eab7b7b10ec3a06b2",
+            "name": "[Oprawa] [4] Okienko",
+            "required": true,
+            "components": [
+              {
+                "id": "050faa930398428399545cbbc42a36de",
+                "name": "Nie",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  },
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "f80c28c92aa346f2b1788d51b5c62925",
+                    "operator": "eq",
+                    "value": "1"
+                  },
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "9408e35065d74631a42efa989312c317",
+                    "operator": "eq",
+                    "value": "1"
+                  },
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "1ffc7fa8bcf44ca0b9930ef647d04b04",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "236d86ac6abc48dd90deab828894dd6c",
+                "name": "Tak",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "f80c28c92aa346f2b1788d51b5c62925",
+                    "operator": "eq",
+                    "value": "1"
+                  },
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "9408e35065d74631a42efa989312c317",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "9690a999bbae4610b15a836dc3ac4c73",
+            "name": "[DEV] - File upload - personalizacja przód",
+            "required": true,
+            "components": [
+              {
+                "id": "c38470dd410b40e0a923a7469b5f88dd",
+                "name": "File upload",
+                "type": "upload",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "513786100d564d5eab7b7b10ec3a06b2",
+                    "componentId": "236d86ac6abc48dd90deab828894dd6c",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "20efea1a49ae4b36bf5b920df29d4fea",
+        "name": "Personalizacja (przód) ",
+        "elements": [
+          {
+            "id": "ff2c11d4d5b942e399046367f11fc886",
+            "name": "[Personalizacja] [01] Metoda personalizacji Przód",
+            "required": true,
+            "components": [
+              {
+                "id": "7996198adbc24bf199a84775f581d3f3",
+                "name": "Brak",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                ]
+              },
+              {
+                "id": "8789b369de034cf98071acff971628a3",
+                "name": "Grawer",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  },
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "f80c28c92aa346f2b1788d51b5c62925",
+                    "operator": "eq",
+                    "value": "1"
+                  },
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "9408e35065d74631a42efa989312c317",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "id": "848f527024024f9995f4db74b4f5b8ac",
+                "name": "Grawer pendrive",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": null,
+                    "elementId": null,
+                    "componentId": null,
+                    "operator": null,
+                    "value": null
+                  }
+                ]
+              },
+              {
+                "id": "be138c1c216c4040b26bed0c6af48943",
+                "name": "Tłoczenie",
+                "type": "button",
+                "valueRange": {
+                  "min": null,
+                  "max": null
+                },
+                "conditions": [
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "72959d7c89a94dbbba33bfb6d5c39a75",
+                    "operator": "eq",
+                    "value": "1"
+                  },
+                  {
+                    "type": "any",
+                    "stepId": "18f95860849345fca9765df11ac489ac",
+                    "elementId": "eddd012396ef46e5b1292e651eec8cf2",
+                    "componentId": "1ffc7fa8bcf44ca0b9930ef647d04b04",
                     "operator": "eq",
                     "value": "1"
                   }
