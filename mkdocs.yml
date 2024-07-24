@@ -1,5 +1,5 @@
-site_name: Order Hub - Documentation
-site_url: https://orderhubdocs.dev.aur.ac/
+site_name: Baza wiedzy
+site_url: https://bazawiedzy.local/
 
 docs_dir: docs/
 
@@ -32,16 +32,17 @@ theme:
 
 nav:
   - Home Page: index.md
-  - Authorization:
-      - authorization/index.md
-  - Configurator:
-      - configurator/index.md
-      - configurator/configurator_list.md
-      - configurator/configurator_implementation.md
-  - Orders:
-      - orders/index.md
-      - orders/create.md
-      - orders/update.md
+  - Varnish:
+      - varnish/index.md
+      - varnish/configuration.md
+      - varnish/working_test.md
+      - varnish/commands.md
+  - Redis:
+      - redis/index.md
+      - redis/configuration.md
+  - Elasticsearch:
+      - elasticsearch/index.md
+      - elasticsearch/configuration.md
 
 plugins:
   - search
@@ -52,23 +53,19 @@ plugins:
       reconfigure_material: true
       reconfigure_search: true
       languages:
-        - locale: en
-          name: English
-          build: true
-          site_name: "Order Hub - Api Documentation"
         - locale: pl
           default: true
           name: Polski
           build: true
-          site_name: "Order Hub - Dokumentacja API"
+          site_name: "Baza wiedzy"
           theme:
             palette:
               primary: red
           nav_translations:
             Home Page: Strona Główna
-            Authorization: Autoryzacja
-            Configurator: Konfigurator
-            Orders: Zamówienia
+            Varnish: Varnish
+            Redis: Redis
+            Elasticsearch: Elasticsearch
 extra:
   domain:
     base_url: https://ohbe.crystal-albums.pl
@@ -91,6 +88,6 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 
-copyright: Copyright © 2024 Aurora Creation Sp. z o.o. (https://auroracreation.com)
+copyright: Adam Patalong
 
 
