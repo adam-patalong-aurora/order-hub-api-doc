@@ -1,0 +1,1516 @@
+
+<!doctype html>
+<html lang="pl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bazawiedzy.local/varnish/configuration/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../working_test/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+    
+    
+      
+        <title>Konfiguracja - Baza wiedzy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#konfiguracja" class="md-skip">
+          Przejdź do treści
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Nagłówek">
+    <a href="../.." title="Baza wiedzy" class="md-header__button md-logo" aria-label="Baza wiedzy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Baza wiedzy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Konfiguracja
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Szukaj" placeholder="Szukaj" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Szukaj">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Wyczyść" aria-label="Wyczyść" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicjowanie wyszukiwania
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Zakładki" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Strona Główna
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Varnish
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../redis/index.md" class="md-tabs__link">
+          
+  
+  Redis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../elasticsearch/index.md" class="md-tabs__link">
+          
+  
+  Elasticsearch
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Nawigacja" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Baza wiedzy" class="md-nav__button md-logo" aria-label="Baza wiedzy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Baza wiedzy
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Strona Główna
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Varnish
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Varnish
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Czym jest Varnish?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Konfiguracja
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Konfiguracja
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Spis treści
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker_composeyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      docker_compose.yml
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#varnishdefaultvcl" class="md-nav__link">
+    <span class="md-ellipsis">
+      varnish/default.vcl
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nginxsiteswebsiteconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      nginx/sites/website.conf
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magento-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Magento 2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etchosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      /etc/hosts
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../working_test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprawdzenie działania
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Przydatne polecenia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Redis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Redis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../redis/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../redis/configuration.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Elasticsearch
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Elasticsearch
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elasticsearch/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elasticsearch/configuration.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="konfiguracja">Konfiguracja</h1>
+<h2 id="docker_composeyml">docker_compose.yml</h2>
+<p>W swoim pliku <code>docker_compose.yml</code> dodaj Varnish jako usługę.</p>
+<details class="warning" open="open">
+<summary>Uwaga</summary>
+<p>Upewnij się, że usługa Varnish nasłuchuje na porcie <code>80:80</code>. Aby to tutaj przychodziły zapytania przeglądarki.</p>
+</details>
+<details class="warning" open="open">
+<summary>Uwaga</summary>
+<p>Ustaw nasłuchiwanie nginx na port <code>8080:8080</code>.</p>
+</details>
+<details>
+<summary>Przykład konfiguracji pliku <code>docker_compose.yml</code></summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">YML</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>version: &#39;3.5&#39;
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>services:
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="hll">  varnish:
+</span><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="hll">    image: varnish:stable
+</span><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="hll">    container_name: ${PROJECT_PREFIX}_varnish
+</span><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="hll">    volumes:
+</span><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="hll">      - ./varnish/default.vcl:/etc/varnish/default.vcl
+</span><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="hll">    ports:
+</span><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="hll">      - &quot;80:80&quot;
+</span><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="hll">    environment:
+</span><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="hll">      - VARNISH_SIZE=2G
+</span><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="hll">    links:
+</span><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="hll">      - nginx
+</span><a id="__codelineno-0-14" name="__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>  nginx:
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>    image: nginx:latest
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>    container_name: ${PROJECT_PREFIX}_nginx
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>    ports:
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="hll">      - &quot;8080:8080&quot;
+</span><a id="__codelineno-0-20" name="__codelineno-0-20"></a>      - 443:443
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>    volumes:
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>      - ${PROJECT_PATH}:${PROJECT_PATH}
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>      - ./nginx/magento.nginx.conf:/etc/nginx/magento.nginx.conf
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a>      - ./nginx/sites:/etc/nginx/conf.d/
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a>      - ./certs:/etc/nginx/certs/
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>    links:
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>      - php
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a>      - php_xdebug
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<h2 id="varnishdefaultvcl">varnish/default.vcl</h2>
+<p>W katalogu dockera <code>varnish</code> utwórz plik <code>default.vcl</code> z konfiguracją Varnish.</p>
+<p>Konfigurację możesz wygenerować przez Panel Administracyjny Magento 2. 
+Wchodzisz w <code>Stores</code> -&gt; <code>Configuration</code> -&gt; <code>Advanced</code> -&gt; <code>System</code> -&gt; <code>Full Page Cache</code> -&gt; <code>Varnish Configuration</code> 
+i klikasz <code>Export VCL for Varnish 5</code>.</p>
+<details class="warning" open="open">
+<summary>Uwaga</summary>
+<p>Ustaw backend varnisha na <code>nginx</code> port <code>8080:8080</code>.</p>
+</details>
+<details class="warning" open="open">
+<summary>Uwaga</summary>
+<p>Aby umożliwić czyszczenie ustaw <code>acl purge</code> oraz <code>req.method == "PURGE"</code>.</p>
+</details>
+<details>
+<summary>Przykład konfiguracji pliku <code>default.yml</code></summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">VCL</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">  1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">  2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">  3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">  4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">  5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">  6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">  7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">  8</a></span>
+<span class="normal"><a href="#__codelineno-1-9">  9</a></span>
+<span class="normal"><a href="#__codelineno-1-10"> 10</a></span>
+<span class="normal"><a href="#__codelineno-1-11"> 11</a></span>
+<span class="normal"><a href="#__codelineno-1-12"> 12</a></span>
+<span class="normal"><a href="#__codelineno-1-13"> 13</a></span>
+<span class="normal"><a href="#__codelineno-1-14"> 14</a></span>
+<span class="normal"><a href="#__codelineno-1-15"> 15</a></span>
+<span class="normal"><a href="#__codelineno-1-16"> 16</a></span>
+<span class="normal"><a href="#__codelineno-1-17"> 17</a></span>
+<span class="normal"><a href="#__codelineno-1-18"> 18</a></span>
+<span class="normal"><a href="#__codelineno-1-19"> 19</a></span>
+<span class="normal"><a href="#__codelineno-1-20"> 20</a></span>
+<span class="normal"><a href="#__codelineno-1-21"> 21</a></span>
+<span class="normal"><a href="#__codelineno-1-22"> 22</a></span>
+<span class="normal"><a href="#__codelineno-1-23"> 23</a></span>
+<span class="normal"><a href="#__codelineno-1-24"> 24</a></span>
+<span class="normal"><a href="#__codelineno-1-25"> 25</a></span>
+<span class="normal"><a href="#__codelineno-1-26"> 26</a></span>
+<span class="normal"><a href="#__codelineno-1-27"> 27</a></span>
+<span class="normal"><a href="#__codelineno-1-28"> 28</a></span>
+<span class="normal"><a href="#__codelineno-1-29"> 29</a></span>
+<span class="normal"><a href="#__codelineno-1-30"> 30</a></span>
+<span class="normal"><a href="#__codelineno-1-31"> 31</a></span>
+<span class="normal"><a href="#__codelineno-1-32"> 32</a></span>
+<span class="normal"><a href="#__codelineno-1-33"> 33</a></span>
+<span class="normal"><a href="#__codelineno-1-34"> 34</a></span>
+<span class="normal"><a href="#__codelineno-1-35"> 35</a></span>
+<span class="normal"><a href="#__codelineno-1-36"> 36</a></span>
+<span class="normal"><a href="#__codelineno-1-37"> 37</a></span>
+<span class="normal"><a href="#__codelineno-1-38"> 38</a></span>
+<span class="normal"><a href="#__codelineno-1-39"> 39</a></span>
+<span class="normal"><a href="#__codelineno-1-40"> 40</a></span>
+<span class="normal"><a href="#__codelineno-1-41"> 41</a></span>
+<span class="normal"><a href="#__codelineno-1-42"> 42</a></span>
+<span class="normal"><a href="#__codelineno-1-43"> 43</a></span>
+<span class="normal"><a href="#__codelineno-1-44"> 44</a></span>
+<span class="normal"><a href="#__codelineno-1-45"> 45</a></span>
+<span class="normal"><a href="#__codelineno-1-46"> 46</a></span>
+<span class="normal"><a href="#__codelineno-1-47"> 47</a></span>
+<span class="normal"><a href="#__codelineno-1-48"> 48</a></span>
+<span class="normal"><a href="#__codelineno-1-49"> 49</a></span>
+<span class="normal"><a href="#__codelineno-1-50"> 50</a></span>
+<span class="normal"><a href="#__codelineno-1-51"> 51</a></span>
+<span class="normal"><a href="#__codelineno-1-52"> 52</a></span>
+<span class="normal"><a href="#__codelineno-1-53"> 53</a></span>
+<span class="normal"><a href="#__codelineno-1-54"> 54</a></span>
+<span class="normal"><a href="#__codelineno-1-55"> 55</a></span>
+<span class="normal"><a href="#__codelineno-1-56"> 56</a></span>
+<span class="normal"><a href="#__codelineno-1-57"> 57</a></span>
+<span class="normal"><a href="#__codelineno-1-58"> 58</a></span>
+<span class="normal"><a href="#__codelineno-1-59"> 59</a></span>
+<span class="normal"><a href="#__codelineno-1-60"> 60</a></span>
+<span class="normal"><a href="#__codelineno-1-61"> 61</a></span>
+<span class="normal"><a href="#__codelineno-1-62"> 62</a></span>
+<span class="normal"><a href="#__codelineno-1-63"> 63</a></span>
+<span class="normal"><a href="#__codelineno-1-64"> 64</a></span>
+<span class="normal"><a href="#__codelineno-1-65"> 65</a></span>
+<span class="normal"><a href="#__codelineno-1-66"> 66</a></span>
+<span class="normal"><a href="#__codelineno-1-67"> 67</a></span>
+<span class="normal"><a href="#__codelineno-1-68"> 68</a></span>
+<span class="normal"><a href="#__codelineno-1-69"> 69</a></span>
+<span class="normal"><a href="#__codelineno-1-70"> 70</a></span>
+<span class="normal"><a href="#__codelineno-1-71"> 71</a></span>
+<span class="normal"><a href="#__codelineno-1-72"> 72</a></span>
+<span class="normal"><a href="#__codelineno-1-73"> 73</a></span>
+<span class="normal"><a href="#__codelineno-1-74"> 74</a></span>
+<span class="normal"><a href="#__codelineno-1-75"> 75</a></span>
+<span class="normal"><a href="#__codelineno-1-76"> 76</a></span>
+<span class="normal"><a href="#__codelineno-1-77"> 77</a></span>
+<span class="normal"><a href="#__codelineno-1-78"> 78</a></span>
+<span class="normal"><a href="#__codelineno-1-79"> 79</a></span>
+<span class="normal"><a href="#__codelineno-1-80"> 80</a></span>
+<span class="normal"><a href="#__codelineno-1-81"> 81</a></span>
+<span class="normal"><a href="#__codelineno-1-82"> 82</a></span>
+<span class="normal"><a href="#__codelineno-1-83"> 83</a></span>
+<span class="normal"><a href="#__codelineno-1-84"> 84</a></span>
+<span class="normal"><a href="#__codelineno-1-85"> 85</a></span>
+<span class="normal"><a href="#__codelineno-1-86"> 86</a></span>
+<span class="normal"><a href="#__codelineno-1-87"> 87</a></span>
+<span class="normal"><a href="#__codelineno-1-88"> 88</a></span>
+<span class="normal"><a href="#__codelineno-1-89"> 89</a></span>
+<span class="normal"><a href="#__codelineno-1-90"> 90</a></span>
+<span class="normal"><a href="#__codelineno-1-91"> 91</a></span>
+<span class="normal"><a href="#__codelineno-1-92"> 92</a></span>
+<span class="normal"><a href="#__codelineno-1-93"> 93</a></span>
+<span class="normal"><a href="#__codelineno-1-94"> 94</a></span>
+<span class="normal"><a href="#__codelineno-1-95"> 95</a></span>
+<span class="normal"><a href="#__codelineno-1-96"> 96</a></span>
+<span class="normal"><a href="#__codelineno-1-97"> 97</a></span>
+<span class="normal"><a href="#__codelineno-1-98"> 98</a></span>
+<span class="normal"><a href="#__codelineno-1-99"> 99</a></span>
+<span class="normal"><a href="#__codelineno-1-100">100</a></span>
+<span class="normal"><a href="#__codelineno-1-101">101</a></span>
+<span class="normal"><a href="#__codelineno-1-102">102</a></span>
+<span class="normal"><a href="#__codelineno-1-103">103</a></span>
+<span class="normal"><a href="#__codelineno-1-104">104</a></span>
+<span class="normal"><a href="#__codelineno-1-105">105</a></span>
+<span class="normal"><a href="#__codelineno-1-106">106</a></span>
+<span class="normal"><a href="#__codelineno-1-107">107</a></span>
+<span class="normal"><a href="#__codelineno-1-108">108</a></span>
+<span class="normal"><a href="#__codelineno-1-109">109</a></span>
+<span class="normal"><a href="#__codelineno-1-110">110</a></span>
+<span class="normal"><a href="#__codelineno-1-111">111</a></span>
+<span class="normal"><a href="#__codelineno-1-112">112</a></span>
+<span class="normal"><a href="#__codelineno-1-113">113</a></span>
+<span class="normal"><a href="#__codelineno-1-114">114</a></span>
+<span class="normal"><a href="#__codelineno-1-115">115</a></span>
+<span class="normal"><a href="#__codelineno-1-116">116</a></span>
+<span class="normal"><a href="#__codelineno-1-117">117</a></span>
+<span class="normal"><a href="#__codelineno-1-118">118</a></span>
+<span class="normal"><a href="#__codelineno-1-119">119</a></span>
+<span class="normal"><a href="#__codelineno-1-120">120</a></span>
+<span class="normal"><a href="#__codelineno-1-121">121</a></span>
+<span class="normal"><a href="#__codelineno-1-122">122</a></span>
+<span class="normal"><a href="#__codelineno-1-123">123</a></span>
+<span class="normal"><a href="#__codelineno-1-124">124</a></span>
+<span class="normal"><a href="#__codelineno-1-125">125</a></span>
+<span class="normal"><a href="#__codelineno-1-126">126</a></span>
+<span class="normal"><a href="#__codelineno-1-127">127</a></span>
+<span class="normal"><a href="#__codelineno-1-128">128</a></span>
+<span class="normal"><a href="#__codelineno-1-129">129</a></span>
+<span class="normal"><a href="#__codelineno-1-130">130</a></span>
+<span class="normal"><a href="#__codelineno-1-131">131</a></span>
+<span class="normal"><a href="#__codelineno-1-132">132</a></span>
+<span class="normal"><a href="#__codelineno-1-133">133</a></span>
+<span class="normal"><a href="#__codelineno-1-134">134</a></span>
+<span class="normal"><a href="#__codelineno-1-135">135</a></span>
+<span class="normal"><a href="#__codelineno-1-136">136</a></span>
+<span class="normal"><a href="#__codelineno-1-137">137</a></span>
+<span class="normal"><a href="#__codelineno-1-138">138</a></span>
+<span class="normal"><a href="#__codelineno-1-139">139</a></span>
+<span class="normal"><a href="#__codelineno-1-140">140</a></span>
+<span class="normal"><a href="#__codelineno-1-141">141</a></span>
+<span class="normal"><a href="#__codelineno-1-142">142</a></span>
+<span class="normal"><a href="#__codelineno-1-143">143</a></span>
+<span class="normal"><a href="#__codelineno-1-144">144</a></span>
+<span class="normal"><a href="#__codelineno-1-145">145</a></span>
+<span class="normal"><a href="#__codelineno-1-146">146</a></span>
+<span class="normal"><a href="#__codelineno-1-147">147</a></span>
+<span class="normal"><a href="#__codelineno-1-148">148</a></span>
+<span class="normal"><a href="#__codelineno-1-149">149</a></span>
+<span class="normal"><a href="#__codelineno-1-150">150</a></span>
+<span class="normal"><a href="#__codelineno-1-151">151</a></span>
+<span class="normal"><a href="#__codelineno-1-152">152</a></span>
+<span class="normal"><a href="#__codelineno-1-153">153</a></span>
+<span class="normal"><a href="#__codelineno-1-154">154</a></span>
+<span class="normal"><a href="#__codelineno-1-155">155</a></span>
+<span class="normal"><a href="#__codelineno-1-156">156</a></span>
+<span class="normal"><a href="#__codelineno-1-157">157</a></span>
+<span class="normal"><a href="#__codelineno-1-158">158</a></span>
+<span class="normal"><a href="#__codelineno-1-159">159</a></span>
+<span class="normal"><a href="#__codelineno-1-160">160</a></span>
+<span class="normal"><a href="#__codelineno-1-161">161</a></span>
+<span class="normal"><a href="#__codelineno-1-162">162</a></span>
+<span class="normal"><a href="#__codelineno-1-163">163</a></span>
+<span class="normal"><a href="#__codelineno-1-164">164</a></span>
+<span class="normal"><a href="#__codelineno-1-165">165</a></span>
+<span class="normal"><a href="#__codelineno-1-166">166</a></span>
+<span class="normal"><a href="#__codelineno-1-167">167</a></span>
+<span class="normal"><a href="#__codelineno-1-168">168</a></span>
+<span class="normal"><a href="#__codelineno-1-169">169</a></span>
+<span class="normal"><a href="#__codelineno-1-170">170</a></span>
+<span class="normal"><a href="#__codelineno-1-171">171</a></span>
+<span class="normal"><a href="#__codelineno-1-172">172</a></span>
+<span class="normal"><a href="#__codelineno-1-173">173</a></span>
+<span class="normal"><a href="#__codelineno-1-174">174</a></span>
+<span class="normal"><a href="#__codelineno-1-175">175</a></span>
+<span class="normal"><a href="#__codelineno-1-176">176</a></span>
+<span class="normal"><a href="#__codelineno-1-177">177</a></span>
+<span class="normal"><a href="#__codelineno-1-178">178</a></span>
+<span class="normal"><a href="#__codelineno-1-179">179</a></span>
+<span class="normal"><a href="#__codelineno-1-180">180</a></span>
+<span class="normal"><a href="#__codelineno-1-181">181</a></span>
+<span class="normal"><a href="#__codelineno-1-182">182</a></span>
+<span class="normal"><a href="#__codelineno-1-183">183</a></span>
+<span class="normal"><a href="#__codelineno-1-184">184</a></span>
+<span class="normal"><a href="#__codelineno-1-185">185</a></span>
+<span class="normal"><a href="#__codelineno-1-186">186</a></span>
+<span class="normal"><a href="#__codelineno-1-187">187</a></span>
+<span class="normal"><a href="#__codelineno-1-188">188</a></span>
+<span class="normal"><a href="#__codelineno-1-189">189</a></span>
+<span class="normal"><a href="#__codelineno-1-190">190</a></span>
+<span class="normal"><a href="#__codelineno-1-191">191</a></span>
+<span class="normal"><a href="#__codelineno-1-192">192</a></span>
+<span class="normal"><a href="#__codelineno-1-193">193</a></span>
+<span class="normal"><a href="#__codelineno-1-194">194</a></span>
+<span class="normal"><a href="#__codelineno-1-195">195</a></span>
+<span class="normal"><a href="#__codelineno-1-196">196</a></span>
+<span class="normal"><a href="#__codelineno-1-197">197</a></span>
+<span class="normal"><a href="#__codelineno-1-198">198</a></span>
+<span class="normal"><a href="#__codelineno-1-199">199</a></span>
+<span class="normal"><a href="#__codelineno-1-200">200</a></span>
+<span class="normal"><a href="#__codelineno-1-201">201</a></span>
+<span class="normal"><a href="#__codelineno-1-202">202</a></span>
+<span class="normal"><a href="#__codelineno-1-203">203</a></span>
+<span class="normal"><a href="#__codelineno-1-204">204</a></span>
+<span class="normal"><a href="#__codelineno-1-205">205</a></span>
+<span class="normal"><a href="#__codelineno-1-206">206</a></span>
+<span class="normal"><a href="#__codelineno-1-207">207</a></span>
+<span class="normal"><a href="#__codelineno-1-208">208</a></span>
+<span class="normal"><a href="#__codelineno-1-209">209</a></span>
+<span class="normal"><a href="#__codelineno-1-210">210</a></span>
+<span class="normal"><a href="#__codelineno-1-211">211</a></span>
+<span class="normal"><a href="#__codelineno-1-212">212</a></span>
+<span class="normal"><a href="#__codelineno-1-213">213</a></span>
+<span class="normal"><a href="#__codelineno-1-214">214</a></span>
+<span class="normal"><a href="#__codelineno-1-215">215</a></span>
+<span class="normal"><a href="#__codelineno-1-216">216</a></span>
+<span class="normal"><a href="#__codelineno-1-217">217</a></span>
+<span class="normal"><a href="#__codelineno-1-218">218</a></span>
+<span class="normal"><a href="#__codelineno-1-219">219</a></span>
+<span class="normal"><a href="#__codelineno-1-220">220</a></span>
+<span class="normal"><a href="#__codelineno-1-221">221</a></span>
+<span class="normal"><a href="#__codelineno-1-222">222</a></span>
+<span class="normal"><a href="#__codelineno-1-223">223</a></span>
+<span class="normal"><a href="#__codelineno-1-224">224</a></span>
+<span class="normal"><a href="#__codelineno-1-225">225</a></span>
+<span class="normal"><a href="#__codelineno-1-226">226</a></span>
+<span class="normal"><a href="#__codelineno-1-227">227</a></span>
+<span class="normal"><a href="#__codelineno-1-228">228</a></span>
+<span class="normal"><a href="#__codelineno-1-229">229</a></span>
+<span class="normal"><a href="#__codelineno-1-230">230</a></span>
+<span class="normal"><a href="#__codelineno-1-231">231</a></span>
+<span class="normal"><a href="#__codelineno-1-232">232</a></span>
+<span class="normal"><a href="#__codelineno-1-233">233</a></span>
+<span class="normal"><a href="#__codelineno-1-234">234</a></span>
+<span class="normal"><a href="#__codelineno-1-235">235</a></span>
+<span class="normal"><a href="#__codelineno-1-236">236</a></span>
+<span class="normal"><a href="#__codelineno-1-237">237</a></span>
+<span class="normal"><a href="#__codelineno-1-238">238</a></span>
+<span class="normal"><a href="#__codelineno-1-239">239</a></span>
+<span class="normal"><a href="#__codelineno-1-240">240</a></span>
+<span class="normal"><a href="#__codelineno-1-241">241</a></span>
+<span class="normal"><a href="#__codelineno-1-242">242</a></span>
+<span class="normal"><a href="#__codelineno-1-243">243</a></span>
+<span class="normal"><a href="#__codelineno-1-244">244</a></span>
+<span class="normal"><a href="#__codelineno-1-245">245</a></span>
+<span class="normal"><a href="#__codelineno-1-246">246</a></span>
+<span class="normal"><a href="#__codelineno-1-247">247</a></span>
+<span class="normal"><a href="#__codelineno-1-248">248</a></span>
+<span class="normal"><a href="#__codelineno-1-249">249</a></span>
+<span class="normal"><a href="#__codelineno-1-250">250</a></span>
+<span class="normal"><a href="#__codelineno-1-251">251</a></span>
+<span class="normal"><a href="#__codelineno-1-252">252</a></span>
+<span class="normal"><a href="#__codelineno-1-253">253</a></span>
+<span class="normal"><a href="#__codelineno-1-254">254</a></span>
+<span class="normal"><a href="#__codelineno-1-255">255</a></span>
+<span class="normal"><a href="#__codelineno-1-256">256</a></span>
+<span class="normal"><a href="#__codelineno-1-257">257</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c"># VCL version 5.0 is not supported so it should be 4.0 even though actually used Varnish version is 6</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">vcl</span><span class="w"> </span><span class="m">4</span><span class="o">.</span><span class="m">1</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="k">import</span><span class="w"> </span><span class="n">std</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="c"># The minimal Varnish version is 6.0</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="c"># For SSL offloading, pass the following header in your proxy server or load balancer: &#39;X-Forwarded-Proto: https&#39;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="k">backend</span><span class="vg"> default</span><span class="p"> {</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="hll"><span class="w">    </span><span class="na">.host</span><span class="o"> = </span><span class="s">&quot;nginx&quot;</span><span class="p">;</span>
+</span><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="hll"><span class="w">    </span><span class="na">.port</span><span class="o"> = </span><span class="s">&quot;8080&quot;</span><span class="p">;</span>
+</span><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">    </span><span class="na">.first_byte_timeout</span><span class="o"> = </span><span class="ld">600s</span><span class="p">;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="na">.probe</span><span class="o"> = </span><span class="p">{</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">        </span><span class="na">.url</span><span class="o"> = </span><span class="s">&quot;/health_check.php&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">        </span><span class="na">.timeout</span><span class="o"> = </span><span class="ld">2s</span><span class="p">;</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">        </span><span class="na">.interval</span><span class="o"> = </span><span class="ld">5s</span><span class="p">;</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">        </span><span class="na">.window</span><span class="o"> = </span><span class="m">10</span><span class="p">;</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">        </span><span class="na">.threshold</span><span class="o"> = </span><span class="m">5</span><span class="p">;</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">   </span><span class="p">}</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="p">}</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="hll"><span class="k">acl </span><span class="vg">purge </span><span class="p">{</span>
+</span><a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="hll"><span class="w">    </span><span class="s">&quot;localhost&quot;</span><span class="p">;</span>
+</span><a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="hll"><span class="w">    </span><span class="s">&quot;127.0.0.1&quot;</span><span class="p">;</span>
+</span><a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="hll"><span class="w">    </span><span class="s">&quot;nginx&quot;</span><span class="p">;</span>
+</span><a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="hll"><span class="p">}</span>
+</span><a id="__codelineno-1-26" name="__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="k">sub </span><span class="nf">vcl_recv</span><span class="p"> {</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.restarts</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="nv">req.hash_always_miss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31"></a>
+<a id="__codelineno-1-32" name="__codelineno-1-32"></a><span class="hll"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.method</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;PURGE&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+</span><a id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="hll"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">client.ip</span><span class="w"> </span><span class="o">!~</span><span class="w"> </span><span class="no">purge</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+</span><a id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="hll"><span class="w">            </span><span class="c">#return (synth(405, &quot;Method not allowed&quot;));</span>
+</span><a id="__codelineno-1-35" name="__codelineno-1-35"></a><span class="hll"><span class="w">        </span><span class="o">}</span>
+</span><a id="__codelineno-1-36" name="__codelineno-1-36"></a><span class="hll"><span class="w">        </span><span class="c"># To use the X-Pool header for purging varnish during automated deployments, make sure the X-Pool header</span>
+</span><a id="__codelineno-1-37" name="__codelineno-1-37"></a><span class="hll"><span class="w">        </span><span class="c"># has been added to the response in your backend server config. This is used, for example, by the</span>
+</span><a id="__codelineno-1-38" name="__codelineno-1-38"></a><span class="hll"><span class="w">        </span><span class="c"># capistrano-magento2 gem for purging old content from varnish during it&#39;s deploy routine.</span>
+</span><a id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="hll"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nv">req.http.X-Magento-Tags-Pattern</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="nv">req.http.X-Pool</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+</span><a id="__codelineno-1-40" name="__codelineno-1-40"></a><span class="hll"><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="no">synth</span><span class="p">(</span><span class="m">400</span><span class="o">,</span><span class="w"> </span><span class="s">&quot;X-Magento-Tags-Pattern or X-Pool header required&quot;</span><span class="p">));</span>
+</span><a id="__codelineno-1-41" name="__codelineno-1-41"></a><span class="hll"><span class="w">        </span><span class="o">}</span>
+</span><a id="__codelineno-1-42" name="__codelineno-1-42"></a><span class="hll"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.http.X-Magento-Tags-Pattern</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+</span><a id="__codelineno-1-43" name="__codelineno-1-43"></a><span class="hll"><span class="w">          </span><span class="k">ban</span><span class="p">(</span><span class="s">&quot;obj.http.X-Magento-Tags ~ &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">req.http.X-Magento-Tags-Pattern</span><span class="p">);</span>
+</span><a id="__codelineno-1-44" name="__codelineno-1-44"></a><span class="hll"><span class="w">        </span><span class="o">}</span>
+</span><a id="__codelineno-1-45" name="__codelineno-1-45"></a><span class="hll"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.http.X-Pool</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+</span><a id="__codelineno-1-46" name="__codelineno-1-46"></a><span class="hll"><span class="w">          </span><span class="k">ban</span><span class="p">(</span><span class="s">&quot;obj.http.X-Pool ~ &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">req.http.X-Pool</span><span class="p">);</span>
+</span><a id="__codelineno-1-47" name="__codelineno-1-47"></a><span class="hll"><span class="w">        </span><span class="o">}</span>
+</span><a id="__codelineno-1-48" name="__codelineno-1-48"></a><span class="hll"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="no">synth</span><span class="p">(</span><span class="m">200</span><span class="o">,</span><span class="w"> </span><span class="s">&quot;Purged&quot;</span><span class="p">));</span>
+</span><a id="__codelineno-1-49" name="__codelineno-1-49"></a><span class="hll"><span class="w">    </span><span class="o">}</span>
+</span><a id="__codelineno-1-50" name="__codelineno-1-50"></a>
+<a id="__codelineno-1-51" name="__codelineno-1-51"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.method</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;GET&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-1-52" name="__codelineno-1-52"></a><span class="w">        </span><span class="nv">req.method</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;HEAD&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-1-53" name="__codelineno-1-53"></a><span class="w">        </span><span class="nv">req.method</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;PUT&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54"></a><span class="w">        </span><span class="nv">req.method</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;POST&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-1-55" name="__codelineno-1-55"></a><span class="w">        </span><span class="nv">req.method</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;TRACE&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-1-56" name="__codelineno-1-56"></a><span class="w">        </span><span class="nv">req.method</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;OPTIONS&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-1-57" name="__codelineno-1-57"></a><span class="w">        </span><span class="nv">req.method</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;DELETE&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-58" name="__codelineno-1-58"></a><span class="w">          </span><span class="cm">/* Non-RFC2616 or CONNECT which is weird. */</span>
+<a id="__codelineno-1-59" name="__codelineno-1-59"></a><span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="no">pipe</span><span class="p">);</span>
+<a id="__codelineno-1-60" name="__codelineno-1-60"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-61" name="__codelineno-1-61"></a>
+<a id="__codelineno-1-62" name="__codelineno-1-62"></a><span class="w">    </span><span class="c"># We only deal with GET and HEAD by default</span>
+<a id="__codelineno-1-63" name="__codelineno-1-63"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.method</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;GET&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">req.method</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;HEAD&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-64" name="__codelineno-1-64"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="no">pass</span><span class="p">);</span>
+<a id="__codelineno-1-65" name="__codelineno-1-65"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-66" name="__codelineno-1-66"></a>
+<a id="__codelineno-1-67" name="__codelineno-1-67"></a><span class="w">    </span><span class="c"># Bypass customer, shopping cart, checkout</span>
+<a id="__codelineno-1-68" name="__codelineno-1-68"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.url</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;/customer&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nv">req.url</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;/checkout&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-69" name="__codelineno-1-69"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="no">pass</span><span class="p">);</span>
+<a id="__codelineno-1-70" name="__codelineno-1-70"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-71" name="__codelineno-1-71"></a>
+<a id="__codelineno-1-72" name="__codelineno-1-72"></a><span class="w">    </span><span class="c"># Bypass health check requests</span>
+<a id="__codelineno-1-73" name="__codelineno-1-73"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.url</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;^/(pub/)?(health_check.php)$&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-74" name="__codelineno-1-74"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="no">pass</span><span class="p">);</span>
+<a id="__codelineno-1-75" name="__codelineno-1-75"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-76" name="__codelineno-1-76"></a>
+<a id="__codelineno-1-77" name="__codelineno-1-77"></a><span class="w">    </span><span class="c"># Set initial grace period usage status</span>
+<a id="__codelineno-1-78" name="__codelineno-1-78"></a><span class="w">    </span><span class="k">set</span><span class="w"> </span><span class="nv">req.http.grace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-79" name="__codelineno-1-79"></a>
+<a id="__codelineno-1-80" name="__codelineno-1-80"></a><span class="w">    </span><span class="c"># normalize url in case of leading HTTP scheme and domain</span>
+<a id="__codelineno-1-81" name="__codelineno-1-81"></a><span class="w">    </span><span class="k">set</span><span class="w"> </span><span class="nv">req.url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">regsub</span><span class="p">(</span><span class="nv">req.url</span><span class="o">,</span><span class="w"> </span><span class="s">&quot;^http[s]?://&quot;</span><span class="o">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-82" name="__codelineno-1-82"></a>
+<a id="__codelineno-1-83" name="__codelineno-1-83"></a><span class="w">    </span><span class="c"># collect all cookies</span>
+<a id="__codelineno-1-84" name="__codelineno-1-84"></a><span class="w">    </span><span class="nf">std</span><span class="p">.</span><span class="nf">collect</span><span class="p">(</span><span class="nv">req.http.Cookie</span><span class="p">);</span>
+<a id="__codelineno-1-85" name="__codelineno-1-85"></a>
+<a id="__codelineno-1-86" name="__codelineno-1-86"></a><span class="w">    </span><span class="c"># Compression filter. See https://www.varnish-cache.org/trac/wiki/FAQ/Compression</span>
+<a id="__codelineno-1-87" name="__codelineno-1-87"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.http.Accept-Encoding</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-88" name="__codelineno-1-88"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.url</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;\.(jpg|jpeg|png|gif|gz|tgz|bz2|tbz|mp3|ogg|swf|flv)$&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-89" name="__codelineno-1-89"></a><span class="w">            </span><span class="c"># No point in compressing these</span>
+<a id="__codelineno-1-90" name="__codelineno-1-90"></a><span class="w">            </span><span class="k">unset</span><span class="w"> </span><span class="nv">req.http.Accept-Encoding</span><span class="p">;</span>
+<a id="__codelineno-1-91" name="__codelineno-1-91"></a><span class="w">        </span><span class="o">}</span><span class="w"> </span><span class="k">elsif</span><span class="w"> </span><span class="p">(</span><span class="nv">req.http.Accept-Encoding</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;gzip&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-92" name="__codelineno-1-92"></a><span class="w">            </span><span class="k">set</span><span class="w"> </span><span class="nv">req.http.Accept-Encoding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;gzip&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-93" name="__codelineno-1-93"></a><span class="w">        </span><span class="o">}</span><span class="w"> </span><span class="k">elsif</span><span class="w"> </span><span class="p">(</span><span class="nv">req.http.Accept-Encoding</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;deflate&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">req.http.user-agent</span><span class="w"> </span><span class="o">!~</span><span class="w"> </span><span class="s">&quot;MSIE&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-94" name="__codelineno-1-94"></a><span class="w">            </span><span class="k">set</span><span class="w"> </span><span class="nv">req.http.Accept-Encoding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;deflate&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-95" name="__codelineno-1-95"></a><span class="w">        </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-96" name="__codelineno-1-96"></a><span class="w">            </span><span class="c"># unknown algorithm</span>
+<a id="__codelineno-1-97" name="__codelineno-1-97"></a><span class="w">            </span><span class="k">unset</span><span class="w"> </span><span class="nv">req.http.Accept-Encoding</span><span class="p">;</span>
+<a id="__codelineno-1-98" name="__codelineno-1-98"></a><span class="w">        </span><span class="o">}</span>
+<a id="__codelineno-1-99" name="__codelineno-1-99"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-100" name="__codelineno-1-100"></a>
+<a id="__codelineno-1-101" name="__codelineno-1-101"></a><span class="w">    </span><span class="c"># Remove all marketing get parameters to minimize the cache objects</span>
+<a id="__codelineno-1-102" name="__codelineno-1-102"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.url</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;(\?|&amp;)(gclid|cx|ie|cof|siteurl|zanpid|origin|fbclid|mc_[a-z]+|utm_[a-z]+|_bta_[a-z]+)=&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-103" name="__codelineno-1-103"></a><span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="nv">req.url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">regsuball</span><span class="p">(</span><span class="nv">req.url</span><span class="o">,</span><span class="w"> </span><span class="s">&quot;(gclid|cx|ie|cof|siteurl|zanpid|origin|fbclid|mc_[a-z]+|utm_[a-z]+|_bta_[a-z]+)=[-_A-z0-9+()%.]+&amp;?&quot;</span><span class="o">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-104" name="__codelineno-1-104"></a><span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="nv">req.url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">regsub</span><span class="p">(</span><span class="nv">req.url</span><span class="o">,</span><span class="w"> </span><span class="s">&quot;[?|&amp;]+$&quot;</span><span class="o">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-105" name="__codelineno-1-105"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-106" name="__codelineno-1-106"></a>
+<a id="__codelineno-1-107" name="__codelineno-1-107"></a><span class="w">    </span><span class="c"># Static files caching</span>
+<a id="__codelineno-1-108" name="__codelineno-1-108"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.url</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;^/(pub/)?(media|static)/&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-109" name="__codelineno-1-109"></a><span class="w">        </span><span class="c"># Static files should not be cached by default</span>
+<a id="__codelineno-1-110" name="__codelineno-1-110"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="no">pass</span><span class="p">);</span>
+<a id="__codelineno-1-111" name="__codelineno-1-111"></a>
+<a id="__codelineno-1-112" name="__codelineno-1-112"></a><span class="w">        </span><span class="c"># But if you use a few locales and don&#39;t use CDN you can enable caching static files by commenting previous line (#return (pass);) and uncommenting next 3 lines</span>
+<a id="__codelineno-1-113" name="__codelineno-1-113"></a><span class="w">        </span><span class="c">#unset req.http.Https;</span>
+<a id="__codelineno-1-114" name="__codelineno-1-114"></a><span class="w">        </span><span class="c">#unset req.http.X-Forwarded-Proto;</span>
+<a id="__codelineno-1-115" name="__codelineno-1-115"></a><span class="w">        </span><span class="c">#unset req.http.Cookie;</span>
+<a id="__codelineno-1-116" name="__codelineno-1-116"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-117" name="__codelineno-1-117"></a>
+<a id="__codelineno-1-118" name="__codelineno-1-118"></a><span class="w">    </span><span class="c"># Bypass authenticated GraphQL requests without a X-Magento-Cache-Id</span>
+<a id="__codelineno-1-119" name="__codelineno-1-119"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.url</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;/graphql&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="nv">req.http.X-Magento-Cache-Id</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">req.http.Authorization</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;^Bearer&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-120" name="__codelineno-1-120"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="no">pass</span><span class="p">);</span>
+<a id="__codelineno-1-121" name="__codelineno-1-121"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-122" name="__codelineno-1-122"></a>
+<a id="__codelineno-1-123" name="__codelineno-1-123"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="no">hash</span><span class="p">);</span>
+<a id="__codelineno-1-124" name="__codelineno-1-124"></a><span class="o">}</span>
+<a id="__codelineno-1-125" name="__codelineno-1-125"></a>
+<a id="__codelineno-1-126" name="__codelineno-1-126"></a><span class="k">sub </span><span class="nf">vcl_hash</span><span class="p"> {</span>
+<a id="__codelineno-1-127" name="__codelineno-1-127"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="nv">req.url</span><span class="w"> </span><span class="o">!~</span><span class="w"> </span><span class="s">&quot;/graphql&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nv">req.http.X-Magento-Cache-Id</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">req.http.cookie</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;X-Magento-Vary=&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-128" name="__codelineno-1-128"></a><span class="w">        </span><span class="k">hash_data</span><span class="p">(</span><span class="k">regsub</span><span class="p">(</span><span class="nv">req.http.cookie</span><span class="o">,</span><span class="w"> </span><span class="s">&quot;^.*?X-Magento-Vary=([^;]+);*.*$&quot;</span><span class="o">,</span><span class="w"> </span><span class="s">&quot;\1&quot;</span><span class="p">));</span>
+<a id="__codelineno-1-129" name="__codelineno-1-129"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-130" name="__codelineno-1-130"></a>
+<a id="__codelineno-1-131" name="__codelineno-1-131"></a><span class="w">    </span><span class="c"># To make sure http users don&#39;t see ssl warning</span>
+<a id="__codelineno-1-132" name="__codelineno-1-132"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.http.X-Forwarded-Proto</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-133" name="__codelineno-1-133"></a><span class="w">        </span><span class="k">hash_data</span><span class="p">(</span><span class="nv">req.http.X-Forwarded-Proto</span><span class="p">);</span>
+<a id="__codelineno-1-134" name="__codelineno-1-134"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-135" name="__codelineno-1-135"></a>
+<a id="__codelineno-1-136" name="__codelineno-1-136"></a>
+<a id="__codelineno-1-137" name="__codelineno-1-137"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.url</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;/graphql&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-138" name="__codelineno-1-138"></a><span class="w">        </span><span class="k">call</span><span class="w"> </span><span class="n">process_graphql_headers</span><span class="p">;</span>
+<a id="__codelineno-1-139" name="__codelineno-1-139"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-140" name="__codelineno-1-140"></a><span class="o">}</span>
+<a id="__codelineno-1-141" name="__codelineno-1-141"></a>
+<a id="__codelineno-1-142" name="__codelineno-1-142"></a><span class="k">sub </span><span class="nf">process_graphql_headers</span><span class="p"> {</span>
+<a id="__codelineno-1-143" name="__codelineno-1-143"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.http.X-Magento-Cache-Id</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-144" name="__codelineno-1-144"></a><span class="w">        </span><span class="k">hash_data</span><span class="p">(</span><span class="nv">req.http.X-Magento-Cache-Id</span><span class="p">);</span>
+<a id="__codelineno-1-145" name="__codelineno-1-145"></a>
+<a id="__codelineno-1-146" name="__codelineno-1-146"></a><span class="w">        </span><span class="c"># When the frontend stops sending the auth token, make sure users stop getting results cached for logged-in users</span>
+<a id="__codelineno-1-147" name="__codelineno-1-147"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.http.Authorization</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;^Bearer&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-148" name="__codelineno-1-148"></a><span class="w">            </span><span class="k">hash_data</span><span class="p">(</span><span class="s">&quot;Authorized&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-149" name="__codelineno-1-149"></a><span class="w">        </span><span class="o">}</span>
+<a id="__codelineno-1-150" name="__codelineno-1-150"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-151" name="__codelineno-1-151"></a>
+<a id="__codelineno-1-152" name="__codelineno-1-152"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.http.Store</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-153" name="__codelineno-1-153"></a><span class="w">        </span><span class="k">hash_data</span><span class="p">(</span><span class="nv">req.http.Store</span><span class="p">);</span>
+<a id="__codelineno-1-154" name="__codelineno-1-154"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-155" name="__codelineno-1-155"></a>
+<a id="__codelineno-1-156" name="__codelineno-1-156"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">req.http.Content-Currency</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-157" name="__codelineno-1-157"></a><span class="w">        </span><span class="k">hash_data</span><span class="p">(</span><span class="nv">req.http.Content-Currency</span><span class="p">);</span>
+<a id="__codelineno-1-158" name="__codelineno-1-158"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-159" name="__codelineno-1-159"></a><span class="o">}</span>
+<a id="__codelineno-1-160" name="__codelineno-1-160"></a>
+<a id="__codelineno-1-161" name="__codelineno-1-161"></a><span class="k">sub </span><span class="nf">vcl_backend_response</span><span class="p"> {</span>
+<a id="__codelineno-1-162" name="__codelineno-1-162"></a>
+<a id="__codelineno-1-163" name="__codelineno-1-163"></a><span class="w">    </span><span class="k">set</span><span class="w"> </span><span class="nv">beresp.grace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ld">3d</span><span class="p">;</span>
+<a id="__codelineno-1-164" name="__codelineno-1-164"></a>
+<a id="__codelineno-1-165" name="__codelineno-1-165"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">beresp.http.content-type</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;text&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-166" name="__codelineno-1-166"></a><span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="nv">beresp.do_esi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-1-167" name="__codelineno-1-167"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-168" name="__codelineno-1-168"></a>
+<a id="__codelineno-1-169" name="__codelineno-1-169"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">bereq.url</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;\.js$&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nv">beresp.http.content-type</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;text&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-170" name="__codelineno-1-170"></a><span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="nv">beresp.do_gzip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-1-171" name="__codelineno-1-171"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-172" name="__codelineno-1-172"></a>
+<a id="__codelineno-1-173" name="__codelineno-1-173"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">beresp.http.X-Magento-Debug</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-174" name="__codelineno-1-174"></a><span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="nv">beresp.http.X-Magento-Cache-Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">beresp.http.Cache-Control</span><span class="p">;</span>
+<a id="__codelineno-1-175" name="__codelineno-1-175"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-176" name="__codelineno-1-176"></a>
+<a id="__codelineno-1-177" name="__codelineno-1-177"></a><span class="w">    </span><span class="c"># cache only successfully responses and 404s that are not marked as private</span>
+<a id="__codelineno-1-178" name="__codelineno-1-178"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">beresp.status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="m">200</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-1-179" name="__codelineno-1-179"></a><span class="w">            </span><span class="nv">beresp.status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="m">404</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-1-180" name="__codelineno-1-180"></a><span class="w">            </span><span class="nv">beresp.http.Cache-Control</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;private&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-181" name="__codelineno-1-181"></a><span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="nv">beresp.uncacheable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-1-182" name="__codelineno-1-182"></a><span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="nv">beresp.ttl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ld">86400s</span><span class="p">;</span>
+<a id="__codelineno-1-183" name="__codelineno-1-183"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="no">deliver</span><span class="p">);</span>
+<a id="__codelineno-1-184" name="__codelineno-1-184"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-185" name="__codelineno-1-185"></a>
+<a id="__codelineno-1-186" name="__codelineno-1-186"></a><span class="w">    </span><span class="c"># validate if we need to cache it and prevent from setting cookie</span>
+<a id="__codelineno-1-187" name="__codelineno-1-187"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">beresp.ttl</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="ld">0s</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="nv">bereq.method</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;GET&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nv">bereq.method</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;HEAD&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-188" name="__codelineno-1-188"></a><span class="w">        </span><span class="k">unset</span><span class="w"> </span><span class="nv">beresp.http.set-cookie</span><span class="p">;</span>
+<a id="__codelineno-1-189" name="__codelineno-1-189"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-190" name="__codelineno-1-190"></a>
+<a id="__codelineno-1-191" name="__codelineno-1-191"></a><span class="w">   </span><span class="c"># If page is not cacheable then bypass varnish for 2 minutes as Hit-For-Pass</span>
+<a id="__codelineno-1-192" name="__codelineno-1-192"></a><span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">beresp.ttl</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="ld">0s</span><span class="w"> </span><span class="o">||</span>
+<a id="__codelineno-1-193" name="__codelineno-1-193"></a><span class="w">       </span><span class="nv">beresp.http.Surrogate-control</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;no-store&quot;</span><span class="w"> </span><span class="o">||</span>
+<a id="__codelineno-1-194" name="__codelineno-1-194"></a><span class="w">       </span><span class="p">(</span><span class="o">!</span><span class="nv">beresp.http.Surrogate-Control</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<a id="__codelineno-1-195" name="__codelineno-1-195"></a><span class="w">       </span><span class="nv">beresp.http.Cache-Control</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;no-cache|no-store&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span>
+<a id="__codelineno-1-196" name="__codelineno-1-196"></a><span class="w">       </span><span class="nv">beresp.http.Vary</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;*&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-197" name="__codelineno-1-197"></a><span class="w">        </span><span class="c"># Mark as Hit-For-Pass for the next 2 minutes</span>
+<a id="__codelineno-1-198" name="__codelineno-1-198"></a><span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="nv">beresp.ttl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ld">120s</span><span class="p">;</span>
+<a id="__codelineno-1-199" name="__codelineno-1-199"></a><span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="nv">beresp.uncacheable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-1-200" name="__codelineno-1-200"></a><span class="w">   </span><span class="o">}</span>
+<a id="__codelineno-1-201" name="__codelineno-1-201"></a>
+<a id="__codelineno-1-202" name="__codelineno-1-202"></a><span class="w">   </span><span class="c"># If the cache key in the Magento response doesn&#39;t match the one that was sent in the request, don&#39;t cache under the request&#39;s key</span>
+<a id="__codelineno-1-203" name="__codelineno-1-203"></a><span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">bereq.url</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;/graphql&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">bereq.http.X-Magento-Cache-Id</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">bereq.http.X-Magento-Cache-Id</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nv">beresp.http.X-Magento-Cache-Id</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-204" name="__codelineno-1-204"></a><span class="w">      </span><span class="k">set</span><span class="w"> </span><span class="nv">beresp.ttl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ld">0s</span><span class="p">;</span>
+<a id="__codelineno-1-205" name="__codelineno-1-205"></a><span class="w">      </span><span class="k">set</span><span class="w"> </span><span class="nv">beresp.uncacheable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<a id="__codelineno-1-206" name="__codelineno-1-206"></a><span class="w">   </span><span class="o">}</span>
+<a id="__codelineno-1-207" name="__codelineno-1-207"></a>
+<a id="__codelineno-1-208" name="__codelineno-1-208"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="no">deliver</span><span class="p">);</span>
+<a id="__codelineno-1-209" name="__codelineno-1-209"></a><span class="o">}</span>
+<a id="__codelineno-1-210" name="__codelineno-1-210"></a>
+<a id="__codelineno-1-211" name="__codelineno-1-211"></a><span class="k">sub </span><span class="nf">vcl_deliver</span><span class="p"> {</span>
+<a id="__codelineno-1-212" name="__codelineno-1-212"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">resp.http.x-varnish</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-213" name="__codelineno-1-213"></a><span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="nv">resp.http.X-Magento-Cache-Debug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;HIT&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-214" name="__codelineno-1-214"></a><span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="nv">resp.http.Grace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">req.http.grace</span><span class="p">;</span>
+<a id="__codelineno-1-215" name="__codelineno-1-215"></a><span class="w">    </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-216" name="__codelineno-1-216"></a><span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="nv">resp.http.X-Magento-Cache-Debug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;MISS&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-217" name="__codelineno-1-217"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-218" name="__codelineno-1-218"></a>
+<a id="__codelineno-1-219" name="__codelineno-1-219"></a><span class="w">    </span><span class="c"># Not letting browser to cache non-static files.</span>
+<a id="__codelineno-1-220" name="__codelineno-1-220"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">resp.http.Cache-Control</span><span class="w"> </span><span class="o">!~</span><span class="w"> </span><span class="s">&quot;private&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">req.url</span><span class="w"> </span><span class="o">!~</span><span class="w"> </span><span class="s">&quot;^/(pub/)?(media|static)/&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-221" name="__codelineno-1-221"></a><span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="nv">resp.http.Pragma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;no-cache&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-222" name="__codelineno-1-222"></a><span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="nv">resp.http.Expires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;-1&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-223" name="__codelineno-1-223"></a><span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="nv">resp.http.Cache-Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;no-store, no-cache, must-revalidate, max-age=0&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-224" name="__codelineno-1-224"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-225" name="__codelineno-1-225"></a>
+<a id="__codelineno-1-226" name="__codelineno-1-226"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nv">resp.http.X-Magento-Debug</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-227" name="__codelineno-1-227"></a><span class="w">        </span><span class="k">unset</span><span class="w"> </span><span class="nv">resp.http.Age</span><span class="p">;</span>
+<a id="__codelineno-1-228" name="__codelineno-1-228"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-229" name="__codelineno-1-229"></a><span class="w">    </span><span class="k">unset</span><span class="w"> </span><span class="nv">resp.http.X-Magento-Debug</span><span class="p">;</span>
+<a id="__codelineno-1-230" name="__codelineno-1-230"></a><span class="w">    </span><span class="k">unset</span><span class="w"> </span><span class="nv">resp.http.X-Magento-Tags</span><span class="p">;</span>
+<a id="__codelineno-1-231" name="__codelineno-1-231"></a><span class="w">    </span><span class="k">unset</span><span class="w"> </span><span class="nv">resp.http.X-Powered-By</span><span class="p">;</span>
+<a id="__codelineno-1-232" name="__codelineno-1-232"></a><span class="w">    </span><span class="k">unset</span><span class="w"> </span><span class="nv">resp.http.Server</span><span class="p">;</span>
+<a id="__codelineno-1-233" name="__codelineno-1-233"></a><span class="w">    </span><span class="k">unset</span><span class="w"> </span><span class="nv">resp.http.X-Varnish</span><span class="p">;</span>
+<a id="__codelineno-1-234" name="__codelineno-1-234"></a><span class="w">    </span><span class="k">unset</span><span class="w"> </span><span class="nv">resp.http.Via</span><span class="p">;</span>
+<a id="__codelineno-1-235" name="__codelineno-1-235"></a><span class="w">    </span><span class="k">unset</span><span class="w"> </span><span class="nv">resp.http.Link</span><span class="p">;</span>
+<a id="__codelineno-1-236" name="__codelineno-1-236"></a><span class="o">}</span>
+<a id="__codelineno-1-237" name="__codelineno-1-237"></a>
+<a id="__codelineno-1-238" name="__codelineno-1-238"></a><span class="k">sub </span><span class="nf">vcl_hit</span><span class="p"> {</span>
+<a id="__codelineno-1-239" name="__codelineno-1-239"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">obj.ttl</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="ld">0s</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-240" name="__codelineno-1-240"></a><span class="w">        </span><span class="c"># Hit within TTL period</span>
+<a id="__codelineno-1-241" name="__codelineno-1-241"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="no">deliver</span><span class="p">);</span>
+<a id="__codelineno-1-242" name="__codelineno-1-242"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-243" name="__codelineno-1-243"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">std</span><span class="p">.</span><span class="nf">healthy</span><span class="p">(</span><span class="nv">req.backend_hint</span><span class="p">))</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-244" name="__codelineno-1-244"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">obj.ttl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="ld">300s</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="ld">0s</span><span class="p">)</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-245" name="__codelineno-1-245"></a><span class="w">            </span><span class="c"># Hit after TTL expiration, but within grace period</span>
+<a id="__codelineno-1-246" name="__codelineno-1-246"></a><span class="w">            </span><span class="k">set</span><span class="w"> </span><span class="nv">req.http.grace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;normal (healthy server)&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-247" name="__codelineno-1-247"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="no">deliver</span><span class="p">);</span>
+<a id="__codelineno-1-248" name="__codelineno-1-248"></a><span class="w">        </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-249" name="__codelineno-1-249"></a><span class="w">            </span><span class="c"># Hit after TTL and grace expiration</span>
+<a id="__codelineno-1-250" name="__codelineno-1-250"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="no">restart</span><span class="p">);</span>
+<a id="__codelineno-1-251" name="__codelineno-1-251"></a><span class="w">        </span><span class="o">}</span>
+<a id="__codelineno-1-252" name="__codelineno-1-252"></a><span class="w">    </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-253" name="__codelineno-1-253"></a><span class="w">        </span><span class="c"># server is not healthy, retrieve from cache</span>
+<a id="__codelineno-1-254" name="__codelineno-1-254"></a><span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="nv">req.http.grace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;unlimited (unhealthy server)&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-255" name="__codelineno-1-255"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="no">deliver</span><span class="p">);</span>
+<a id="__codelineno-1-256" name="__codelineno-1-256"></a><span class="w">    </span><span class="o">}</span>
+<a id="__codelineno-1-257" name="__codelineno-1-257"></a><span class="o">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<h2 id="nginxsiteswebsiteconf">nginx/sites/website.conf</h2>
+<p>W katalogu dockera <code>nginx</code> utwórz plik <code>website.conf</code> z konfiguracją serwera nginx.</p>
+<details class="warning" open="open">
+<summary>Uwaga</summary>
+<p>Skonfiguruj nasłuchiwanie na port <code>8080</code>. </p>
+</details>
+<details>
+<summary>Przykład konfiguracji pliku <code>website.conf</code></summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">CONF</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span>
+<span class="normal"><a href="#__codelineno-2-29">29</a></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span>
+<span class="normal"><a href="#__codelineno-2-31">31</a></span>
+<span class="normal"><a href="#__codelineno-2-32">32</a></span>
+<span class="normal"><a href="#__codelineno-2-33">33</a></span>
+<span class="normal"><a href="#__codelineno-2-34">34</a></span>
+<span class="normal"><a href="#__codelineno-2-35">35</a></span>
+<span class="normal"><a href="#__codelineno-2-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>map $cookie_XDEBUG_SESSION $phpserver {
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>   default magento246_php:9000;
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>   xdebug magento246_php_xdebug:9000;
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>}
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>server {
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="hll">   listen 8080;
+</span><a id="__codelineno-2-8" name="__codelineno-2-8"></a>   server_name magento.localhost;
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>   ssl_certificate     /etc/nginx/certs/nginx.crt;
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>   ssl_certificate_key /etc/nginx/certs/nginx.key;
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>   set $MAGE_ROOT /home/aurora/workspace/magento246;
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>   set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>   set $MAGE_RUN_CODE base;
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>   add_header Strict-Transport-Security &quot;max-age=63072000&quot; always;
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>   location / {
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a>       include /etc/nginx/magento.nginx.conf;
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>   }
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a>}
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a>server {
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a>   listen 443 ssl http2;
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a>   server_name magento.localhost;
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a>   ssl_certificate     /etc/nginx/certs/nginx.crt;
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a>   ssl_certificate_key /etc/nginx/certs/nginx.key;
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a>   set $MAGE_ROOT /home/aurora/workspace/magento246;
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a>   set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a>   set $MAGE_RUN_CODE base;
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a>
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a>   add_header Strict-Transport-Security &quot;max-age=63072000&quot; always;
+<a id="__codelineno-2-32" name="__codelineno-2-32"></a>
+<a id="__codelineno-2-33" name="__codelineno-2-33"></a>   location / {
+<a id="__codelineno-2-34" name="__codelineno-2-34"></a>       include /etc/nginx/magento.nginx.conf;
+<a id="__codelineno-2-35" name="__codelineno-2-35"></a>   }
+<a id="__codelineno-2-36" name="__codelineno-2-36"></a>}
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<h2 id="magento-2">Magento 2</h2>
+<p>W Panelu Administracyjnym Magento 2 przejdź do <code>Stores</code> -&gt; <code>Configuration</code> -&gt; <code>Advanced</code> -&gt; <code>System</code>
+-&gt; <code>Full Page Cache</code> -&gt; <code>Caching Application</code> i ustaw <code>Varnish Cache</code>.</p>
+<h2 id="etchosts">/etc/hosts</h2>
+<p>Upewnij się, że wpis do pliku <code>/etc/hosts</code> kieruje domenę na lokalny adres IP <code>127.0.0.1</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Powrót do góry
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Adam Patalong
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Skopiowano do schowka", "clipboard.copy": "Kopiuj do schowka", "search.result.more.one": "1 wi\u0119cej na tej stronie", "search.result.more.other": "# wi\u0119cej na tej stronie", "search.result.none": "Brak wynik\u00f3w wyszukiwania", "search.result.one": "Wyniki wyszukiwania: 1", "search.result.other": "Wyniki wyszukiwania: #", "search.result.placeholder": "Zacznij pisa\u0107, aby szuka\u0107", "search.result.term.missing": "Brak", "select.version": "Wybierz wersj\u0119"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

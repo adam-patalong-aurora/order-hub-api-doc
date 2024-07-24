@@ -1,0 +1,29 @@
+version: '3.5'
+services:
+  varnish:
+    image: varnish:stable
+    container_name: ${PROJECT_PREFIX}_varnish
+    volumes:
+      - ./varnish/default.vcl:/etc/varnish/default.vcl
+    ports:
+      - "80:80"
+    environment:
+      - VARNISH_SIZE=2G
+    links:
+      - nginx
+
+  nginx:
+    image: nginx:latest
+    container_name: ${PROJECT_PREFIX}_nginx
+    ports:
+      - "8080:8080"
+      - 443:443
+    volumes:
+      - ${PROJECT_PATH}:${PROJECT_PATH}
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/magento.nginx.conf:/etc/nginx/magento.nginx.conf
+      - ./nginx/sites:/etc/nginx/conf.d/
+      - ./certs:/etc/nginx/certs/
+    links:
+      - php
+      - php_xdebug

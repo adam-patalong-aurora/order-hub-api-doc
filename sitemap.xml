@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://bazawiedzy.local/</loc>
+        <lastmod>2024-07-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://bazawiedzy.local/"/>
+    </url>
+    <url>
+        <loc>https://bazawiedzy.local/varnish/commands/</loc>
+        <lastmod>2024-07-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://bazawiedzy.local/varnish/commands/"/>
+    </url>
+    <url>
+        <loc>https://bazawiedzy.local/varnish/configuration/</loc>
+        <lastmod>2024-07-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://bazawiedzy.local/varnish/configuration/"/>
+    </url>
+    <url>
+        <loc>https://bazawiedzy.local/varnish/</loc>
+        <lastmod>2024-07-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://bazawiedzy.local/varnish/"/>
+    </url>
+    <url>
+        <loc>https://bazawiedzy.local/varnish/working_test/</loc>
+        <lastmod>2024-07-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://bazawiedzy.local/varnish/working_test/"/>
+    </url>
+</urlset>
